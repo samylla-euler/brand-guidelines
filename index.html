@@ -1,0 +1,2958 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EULER Brand Guidelines</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap">
+<style>
+  :root {
+    /* Brand */
+    --black: #0A0F18;
+    --black-deep: #030303;
+    --slate-900: #151F2E;
+    --slate-800: #232B38;
+    --slate-700: #2F3847;
+    --slate-500: #546078;
+    --slate-400: #ADB6C0;
+    --slate-300: #DBE0E5;
+    --slate-200: #ECEFF3;
+    --slate-100: #F1F5F9;
+    --slate-50:  #F8FAFC;
+    --bg:        #F6F7F8;
+    --paper:     #FEFEFE;
+
+    --blue-50:   #F1F5FE;
+    --blue-100:  #DDE8FC;
+    --blue-300:  #92B2F4;
+    --blue-400:  #5E8AEF;
+    --blue-500:  #2563EB;
+    --blue-600:  #1E4FCB;
+    --blue-700:  #1A42A8;
+    --blue-deep: #0A286B;
+
+    --pink-100:  #FFD9EE;
+    --pink-300:  #FF8FCD;
+    --pink-500:  #FF1FA8;
+    --pink-600:  #D80E8C;
+
+    --grad-bp:    linear-gradient(120deg, #1E4FCB 0%, #6B3DE8 45%, #FF1FA8 100%);
+    --grad-bp-soft: linear-gradient(120deg, #2563EB 0%, #8B4DE8 50%, #FF1FA8 100%);
+    --grad-night: linear-gradient(135deg, #030303 0%, #06173D 45%, #0E3A9A 100%);
+    --grad-blue:  linear-gradient(135deg, #2563EB 0%, #0A286B 100%);
+    --grad-pink:  linear-gradient(135deg, #FF1FA8 0%, #6B0E4A 100%);
+    --grad-mono:  linear-gradient(135deg, #0A0F18 0%, #2F3847 100%);
+
+    --r: 4px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--black);
+    font-family: 'Inter', system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    font-size: 16px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--pink-500); color: white; }
+
+  /* ================= LAYOUT ================= */
+  .shell {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+  }
+
+  /* Sidebar */
+  .side {
+    position: sticky; top: 0;
+    height: 100vh;
+    background: var(--black);
+    color: white;
+    padding: 36px 32px;
+    display: flex; flex-direction: column;
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+  .side-brand {
+    display: flex; align-items: center; gap: 10px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .side-brand .side-logo {
+    height: 38px; width: auto;
+    display: block;
+  }
+  .end .end-logo {
+    height: 80px; width: auto;
+    display: block;
+  }
+  .side-meta {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: rgba(255,255,255,0.4);
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+  .side-meta .row { display: flex; justify-content: space-between; }
+  .side-meta strong { color: rgba(255,255,255,0.85); font-weight: 500; }
+
+  .side-section {
+    margin-top: 36px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    padding-bottom: 14px;
+  }
+  .side-nav { display: flex; flex-direction: column; gap: 2px; }
+  .side-nav a {
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 14px;
+    border-radius: var(--r);
+    font-size: 14px; font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    transition: background 160ms, color 160ms;
+    position: relative;
+  }
+  .side-nav a:hover { background: rgba(255,255,255,0.04); color: white; }
+  .side-nav a.active {
+    background: rgba(255,255,255,0.06);
+    color: white;
+  }
+  .side-nav a.active::before {
+    content: ""; position: absolute; left: 0; top: 14px; bottom: 14px;
+    width: 2px; background: var(--blue-500);
+  }
+  .side-nav a .num {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: rgba(255,255,255,0.35);
+    width: 22px;
+  }
+  .side-nav a.active .num { color: var(--blue-300); }
+
+  /* Main */
+  main { min-width: 0; }
+  .page {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 80px 88px 160px;
+  }
+  .section { padding-top: 96px; }
+  .section:first-of-type { padding-top: 0; }
+
+  /* Section header */
+  .sec-head { margin-bottom: 56px; max-width: 880px; }
+  .sec-eyebrow {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: -0.01em;
+    text-transform: uppercase; color: var(--slate-500);
+    margin-bottom: 20px;
+  }
+  .sec-eyebrow .num {
+    background: var(--black); color: white;
+    padding: 3px 8px; border-radius: var(--r);
+    font-weight: 500;
+  }
+  .sec-title {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 500;
+    font-size: clamp(56px, 6.5vw, 96px);
+    line-height: 0.96; letter-spacing: -0.01em;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+    margin: 0 0 24px;
+    color: var(--black);
+  }
+  .sec-title em {
+    font-style: normal; font-weight: 500;
+    background: var(--grad-bp-soft);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .sec-lead {
+    font-size: 19px; line-height: 1.55;
+    color: var(--slate-500);
+    max-width: 640px;
+    margin: 0;
+  }
+
+  /* Sub-head */
+  .sub-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin: 88px 0 32px;
+  }
+  /* First sub-head in its parent sits flush — parent padding handles top spacing. */
+  *:not(.sub-head) > .sub-head:first-child {
+    margin-top: 0;
+  }
+  .sub-head h3 {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 500;
+    font-size: 28px; letter-spacing: -0.01em; line-height: 1.1;
+    margin: 0; color: var(--black);
+  }
+  .sub-head .tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: var(--slate-500);
+    letter-spacing: -0.01em;
+  }
+
+  /* ================= HERO ================= */
+  .hero {
+    padding-top: 0;
+  }
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: -0.01em;
+    text-transform: uppercase; color: var(--slate-500);
+    margin-bottom: 32px;
+  }
+  .hero-eyebrow .v {
+    background: var(--black); color: white;
+    padding: 4px 9px; border-radius: var(--r);
+    font-weight: 500;
+  }
+  .hero-eyebrow .dot {
+    width: 6px; height: 6px; border-radius: 999px;
+    background: var(--blue-500);
+    box-shadow: 0 0 0 4px rgba(37,99,235,0.18);
+  }
+  .hero h1 {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 500;
+    font-size: clamp(72px, 9vw, 148px);
+    line-height: 0.92; letter-spacing: -0.01em;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+    margin: 0 0 32px;
+    color: var(--black);
+  }
+  .hero h1 em {
+    font-style: normal; font-weight: 500;
+    background: var(--grad-bp-soft);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero-sub {
+    font-size: 22px; line-height: 1.5;
+    color: var(--slate-500);
+    max-width: 640px;
+    margin: 0 0 56px;
+  }
+  .hero-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    column-gap: 56px;
+    border-top: 1px solid var(--slate-200);
+    border-bottom: 1px solid var(--slate-200);
+  }
+  .hero-meta .cell {
+    padding: 24px 0;
+    position: relative;
+  }
+  .hero-meta .cell:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 24px;
+    bottom: 24px;
+    /* Sit in the middle of the 56px column-gap. */
+    right: -28px;
+    width: 1px;
+    background: var(--slate-200);
+  }
+  .hero-meta .lbl {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; letter-spacing: -0.01em;
+    text-transform: uppercase; color: var(--slate-500);
+    margin-bottom: 8px;
+  }
+  .hero-meta .val {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 18px; letter-spacing: -0.01em;
+    color: var(--black);
+  }
+
+  /* ================= COLORS ================= */
+  .palette {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 16px;
+    margin-bottom: 64px;
+  }
+  .palette .pal-card {
+    border-radius: var(--r);
+    overflow: hidden;
+    position: relative;
+    padding: 36px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    min-height: 320px;
+  }
+  .palette .pal-card.hero {
+    grid-column: 1; grid-row: 1 / span 2;
+    background:
+      radial-gradient(ellipse 80% 60% at 30% 0%, rgba(37,99,235,0.55), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 100% 100%, rgba(255,31,168,0.42), transparent 65%),
+      var(--grad-night);
+    color: white;
+    min-height: 656px;
+  }
+  .palette .pal-card.hero .stack-meta {
+    display: flex; flex-direction: column; gap: 32px;
+  }
+  .palette .pal-card.hero h3 {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 500;
+    font-size: clamp(56px, 5.4vw, 88px); line-height: 0.92;
+    letter-spacing: -0.01em;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal; margin: 0;
+  }
+  .palette .pal-card.hero .desc {
+    font-size: 15px; line-height: 1.6;
+    color: rgba(255,255,255,0.7); margin: 0;
+    max-width: 36ch;
+  }
+  .palette .pal-card.hero .specs {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .palette .pal-card.hero .specs .lbl {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; letter-spacing: -0.01em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+  .palette .pal-card.hero .specs .val {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; color: white; margin-top: 6px;
+  }
+  .palette .pal-card.color {
+    color: white;
+  }
+  .palette .pal-card.color.black { background: var(--black); }
+  .palette .pal-card.color.blue { background: var(--blue-500); }
+  .palette .pal-card.color.pink { background: var(--pink-500); }
+  .palette .pal-card .head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 16px;
+  }
+  .palette .pal-card .role {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+  .palette .pal-card .pct {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 22px; letter-spacing: -0.01em;
+    color: white;
+    background: rgba(255,255,255,0.12);
+    padding: 4px 12px; border-radius: var(--r);
+    backdrop-filter: blur(6px);
+  }
+  .palette .pal-card .name {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 500;
+    font-size: clamp(36px, 3.4vw, 52px);
+    letter-spacing: -0.01em; line-height: 0.95;
+    margin: 0;
+  }
+  .palette .pal-card .footer {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.16);
+  }
+  .palette .pal-card .footer .hex {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; letter-spacing: -0.01em;
+    color: white;
+  }
+  .palette .pal-card .footer .role-r {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .usage-bar {
+    margin-top: 48px;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--r);
+    background: white;
+    overflow: hidden;
+  }
+  .usage-bar .header {
+    padding: 22px 28px;
+    border-bottom: 1px solid var(--slate-200);
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .usage-bar .header h3 {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 500;
+    font-size: 22px; letter-spacing: -0.01em; margin: 0;
+    color: var(--black);
+  }
+  .usage-bar .header .tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: var(--slate-500);
+  }
+  .usage-bar .ratio {
+    display: flex; height: 56px;
+  }
+  .usage-bar .ratio .seg {
+    display: flex; align-items: center; padding: 0 22px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    gap: 12px;
+  }
+  .usage-bar .ratio .seg.black { background: var(--black); flex: 70; }
+  .usage-bar .ratio .seg.blue { background: var(--blue-500); flex: 25; }
+  .usage-bar .ratio .seg.pink { background: var(--pink-500); flex: 5; padding: 0 16px; }
+  .usage-bar .ratio .seg .pct-num {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 18px; letter-spacing: -0.01em;
+    color: white;
+  }
+  .usage-bar .legend {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--slate-200);
+  }
+  .usage-bar .legend .item {
+    padding: 24px 28px;
+    border-right: 1px solid var(--slate-200);
+  }
+  .usage-bar .legend .item:last-child { border-right: 0; }
+  .usage-bar .legend .item .role {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: -0.01em;
+    text-transform: uppercase; color: var(--slate-500);
+    margin-bottom: 8px;
+  }
+  .usage-bar .legend .item .name {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 18px; letter-spacing: -0.01em;
+    color: var(--black); margin-bottom: 8px;
+  }
+  .usage-bar .legend .item p {
+    font-size: 13px; line-height: 1.55;
+    color: var(--slate-500); margin: 0;
+  }
+
+  /* Color scale strips */
+  .scale-block { margin-bottom: 56px; }
+  .scale-row {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    border-radius: var(--r);
+    overflow: hidden;
+    border: 1px solid var(--slate-200);
+  }
+  .scale-row .step {
+    aspect-ratio: 1/1.2;
+    padding: 14px 12px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    transition: transform 200ms;
+    cursor: default;
+  }
+  .scale-row .step .num {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; font-weight: 500;
+  }
+  .scale-row .step .hex {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; opacity: 0.7;
+    letter-spacing: -0.01em;
+  }
+
+  /* DO / DON'T */
+  /* DO / DON'T */
+  .do-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+    margin-top: 32px;
+  }
+  .do-card {
+    border-radius: var(--r); border: 1px solid var(--slate-200);
+    overflow: hidden; background: white;
+  }
+  .do-card .demo {
+    height: 200px; display: grid; place-items: center;
+    border-bottom: 1px solid var(--slate-200);
+    position: relative;
+  }
+  .do-card .demo.dark { background: var(--black); }
+  .do-card .demo.light { background: var(--bg); }
+  .do-card .demo.bad { background: var(--blue-100); }
+  .do-card .demo.bad-2 { background: var(--pink-100); }
+  .do-card .demo .btn-demo {
+    padding: 14px 28px; font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 15px; border-radius: var(--r);
+    letter-spacing: -0.01em;
+  }
+  .do-card .label {
+    padding: 16px 20px;
+    display: flex; align-items: center; gap: 10px;
+    font-size: 14px; font-weight: 500;
+  }
+  .do-card .label .icon {
+    width: 20px; height: 20px; border-radius: 999px;
+    display: grid; place-items: center;
+    font-size: 12px; font-weight: 700;
+  }
+  .do-card.do .label .icon { background: #ECFDF3; color: #15803d; }
+  .do-card.dont .label .icon { background: #FEF3F2; color: #B42318; }
+  .do-card.do .label { color: var(--black); }
+  .do-card.dont .label .text { text-decoration: line-through; color: var(--slate-500); }
+
+  /* ================= GRADIENTS ================= */
+  .grad-hero {
+    position: relative;
+    border-radius: var(--r);
+    overflow: hidden;
+    aspect-ratio: 24/9;
+    background: var(--grad-bp);
+    margin-bottom: 24px;
+    color: white;
+    padding: 40px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .grad-hero::after {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+    pointer-events: none;
+  }
+  .grad-hero > * { position: relative; z-index: 1; }
+  .grad-hero .top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .grad-hero .badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; letter-spacing: -0.01em; text-transform: uppercase;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(6px);
+    padding: 6px 14px; border-radius: var(--r);
+  }
+  .grad-hero .stops {
+    display: inline-flex; gap: 0; border-radius: var(--r); overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  .grad-hero .stops .stop { width: 56px; height: 32px; }
+  .grad-hero h3 {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 500;
+    font-size: clamp(72px, 8vw, 132px); letter-spacing: -0.01em;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+    line-height: 0.9; margin: 0;
+  }
+  .grad-hero .meta-row {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    gap: 24px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,0.18);
+  }
+  .grad-hero .meta-row .css {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; line-height: 1.6;
+    color: rgba(255,255,255,0.85);
+  }
+  .grad-hero .meta-row .role-r {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: -0.01em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    text-align: right;
+  }
+
+  .grad-row {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+  .grad-tile {
+    border-radius: var(--r);
+    overflow: hidden;
+    border: 1px solid var(--slate-200);
+    background: white;
+  }
+  .grad-tile .surface {
+    aspect-ratio: 4/5;
+    position: relative;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 18px;
+  }
+  .grad-tile.bp .surface { background: var(--grad-bp); }
+  .grad-tile.bp-soft .surface { background: var(--grad-bp-soft); }
+  .grad-tile.night .surface { background: var(--grad-night); }
+  .grad-tile.blue .surface { background: var(--grad-blue); }
+  .grad-tile.pink .surface { background: var(--grad-pink); }
+  .grad-tile.mono .surface { background: var(--grad-mono); }
+  .grad-tile .surface .badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px; letter-spacing: -0.01em; text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+    padding: 4px 8px; border-radius: 2px;
+    align-self: flex-start;
+  }
+  .grad-tile .surface .stops {
+    display: inline-flex; gap: 0;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 2px; overflow: hidden;
+    align-self: flex-start;
+  }
+  .grad-tile .surface .stops .stop { width: 22px; height: 16px; }
+  .grad-tile .meta {
+    padding: 16px 18px 18px;
+    border-top: 1px solid var(--slate-100);
+  }
+  .grad-tile .meta .name {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 17px; letter-spacing: -0.01em;
+    color: var(--black); margin: 0 0 4px;
+  }
+  .grad-tile .meta .use {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; letter-spacing: -0.01em;
+    color: var(--slate-500); line-height: 1.5;
+  }
+
+  /* ================= TYPOGRAPHY ================= */
+  /* Dual-face hero: EB Garamond (display) + Inter (body) */
+  .face-stage {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--r);
+    overflow: hidden;
+  }
+  .face-card {
+    padding: 48px 48px 40px;
+    position: relative;
+    display: flex; flex-direction: column;
+    min-height: 480px;
+  }
+  .face-card.display {
+    background: var(--black); color: white;
+  }
+  .face-card.display::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 65% 65% at 100% 0%, rgba(37,99,235,0.30), transparent 60%),
+                radial-gradient(ellipse 50% 50% at 0% 100%, rgba(255,31,168,0.22), transparent 65%);
+    pointer-events: none;
+  }
+  .face-card.body {
+    background: var(--paper);
+  }
+  .face-card > * { position: relative; z-index: 1; }
+  .face-card .face-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: -0.01em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .face-card.display .face-tag { color: rgba(255,255,255,0.55); }
+  .face-card.body .face-tag { color: var(--slate-500); }
+  .face-card .face-tag .dot {
+    width: 8px; height: 8px; border-radius: 999px;
+  }
+  .face-card.display .face-tag .dot { background: var(--blue-400); }
+  .face-card.body .face-tag .dot { background: var(--pink-500); }
+  .face-card .face-glyph {
+    margin-top: 56px;
+    line-height: 0.82; letter-spacing: -0.01em;
+    font-size: clamp(120px, 12vw, 180px);
+  }
+  .face-card.display .face-glyph {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    font-weight: 400; color: white;
+  }
+  .face-card.body .face-glyph {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700; color: var(--black);
+    letter-spacing: -0.01em;
+  }
+  .face-card .face-name {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    font-weight: 500; font-size: 28px;
+    letter-spacing: -0.01em;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+    margin: 24px 0 6px;
+  }
+  .face-card.display .face-name { color: white; }
+  .face-card.body .face-name { color: var(--black); }
+  .face-card .face-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.55;
+    max-width: 32ch;
+  }
+  .face-card.display .face-role { color: rgba(255,255,255,0.65); }
+  .face-card.body .face-role { color: var(--slate-500); }
+  .face-card .face-meta {
+    margin-top: auto;
+    padding-top: 32px;
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 18px 32px;
+  }
+  .face-card.display .face-meta { border-top: 1px solid rgba(255,255,255,0.15); margin-top: 40px; }
+  .face-card.body .face-meta { border-top: 1px solid var(--slate-200); margin-top: 40px; }
+  .face-card .face-meta .lbl {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; letter-spacing: -0.01em; text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .face-card.display .face-meta .lbl { color: rgba(255,255,255,0.45); }
+  .face-card.body .face-meta .lbl { color: var(--slate-500); }
+  .face-card .face-meta .val {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; font-weight: 500; letter-spacing: -0.01em;
+  }
+  .face-card.display .face-meta .val { color: white; }
+  .face-card.body .face-meta .val { color: var(--black); }
+
+  /* Pairing principle — display + body together */
+  .face-pair {
+    margin-top: 16px;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--r);
+    background: white;
+    padding: 56px 48px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .face-pair .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: -0.01em; text-transform: uppercase;
+    color: var(--slate-500); padding-top: 14px;
+  }
+  .face-pair .demo .demo-display {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    font-weight: 400; font-size: clamp(40px, 4.6vw, 64px);
+    letter-spacing: -0.01em; line-height: 1.02;
+    color: var(--black); margin: 0 0 24px;
+    max-width: 18ch;
+  }
+  .face-pair .demo .demo-display em {
+    font-style: normal; font-weight: 400;
+    background: var(--grad-bp-soft);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .face-pair .demo .demo-body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; font-size: 18px; line-height: 1.6;
+    color: var(--slate-500); max-width: 60ch;
+    margin: 0;
+  }
+  .face-pair .demo .demo-rule {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500; font-size: 13px; letter-spacing: -0.01em;
+    color: var(--black); margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--slate-100);
+    display: flex; gap: 32px; flex-wrap: wrap;
+  }
+  .face-pair .demo .demo-rule span { color: var(--slate-500); font-weight: 400; }
+
+  /* Type scale — face-aware */
+  .scale-list {
+    display: flex; flex-direction: column;
+    border-top: 1px solid var(--slate-200);
+  }
+  .scale-line {
+    display: grid;
+    grid-template-columns: 90px 1fr 90px 200px;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--slate-200);
+    align-items: baseline;
+  }
+  .scale-line .lvl {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: var(--slate-500);
+    letter-spacing: -0.01em; text-transform: uppercase;
+  }
+  .scale-line .face-pill {
+    justify-self: start; align-self: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 9px; letter-spacing: -0.01em; text-transform: uppercase;
+    padding: 4px 8px; border-radius: 4px;
+    border: 1px solid var(--slate-200);
+    color: var(--slate-500);
+    white-space: nowrap;
+  }
+  .scale-line .face-pill.is-display {
+    border-color: var(--black); color: var(--black);
+  }
+  .scale-line .face-pill.is-body {
+    border-color: var(--blue-500); color: var(--blue-500);
+  }
+  .scale-line .face-pill.is-mono {
+    border-color: var(--pink-500); color: var(--pink-500);
+  }
+  .scale-line .sample {
+    color: var(--black);
+    line-height: 1.05;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .scale-line.is-display-face .sample {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+  }
+  .scale-line.is-body-face .sample {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+  }
+  .scale-line .specs {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: var(--slate-500);
+    line-height: 1.6;
+  }
+
+  .scale-line.s-display .sample { font-size: 96px; letter-spacing: -0.01em; line-height: 0.95; }
+  .scale-line.s-h1 .sample { font-size: 72px; letter-spacing: -0.01em; line-height: 1; }
+  .scale-line.s-h2 .sample { font-size: 56px; letter-spacing: -0.01em; }
+  .scale-line.s-h3 .sample { font-size: 36px; letter-spacing: -0.01em; }
+  .scale-line.s-h4 .sample { font-size: 24px; letter-spacing: -0.01em; }
+  .scale-line.s-lead .sample { font-size: 22px; font-weight: 400; line-height: 1.5; white-space: normal; }
+  .scale-line.s-body .sample { font-size: 17px; font-weight: 400; line-height: 1.6; white-space: normal; }
+  .scale-line.s-small .sample { font-size: 14px; font-weight: 400; line-height: 1.55; }
+  .scale-line.s-mono .sample { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: -0.01em; text-transform: uppercase; }
+
+  /* Weights — split block per face */
+  .weights-split {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--r);
+    overflow: hidden;
+  }
+  .weights-col {
+    padding: 32px 36px 16px;
+    background: white;
+  }
+  .weights-col + .weights-col {
+    border-left: 1px solid var(--slate-200);
+    background: var(--paper);
+  }
+  .weights-col .col-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--slate-200);
+  }
+  .weights-col .col-head .col-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; font-size: 22px;
+    letter-spacing: -0.01em; color: var(--black);
+  }
+  .weights-col .col-head .col-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; letter-spacing: -0.01em; text-transform: uppercase;
+    color: var(--slate-500);
+  }
+  .weight-row {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 24px; padding: 22px 0;
+    border-bottom: 1px solid var(--slate-200);
+    align-items: baseline;
+  }
+  .weight-row:last-child { border-bottom: 0; }
+  .weight-row .w-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: var(--slate-500);
+    letter-spacing: -0.01em;
+  }
+  .weight-row .w-spec {
+    font-size: clamp(28px, 2.6vw, 38px);
+    line-height: 1; letter-spacing: -0.01em;
+    color: var(--black);
+  }
+  .weights-col.display .w-spec {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  }
+  .weights-col.body .w-spec {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.01em;
+  }
+  .weight-row .w-spec.w-300 { font-weight: 300; }
+  .weight-row .w-spec.w-400 { font-weight: 400; }
+  .weight-row .w-spec.w-500 { font-weight: 500; }
+  .weight-row .w-spec.w-600 { font-weight: 600; }
+  .weight-row .w-spec.w-700 { font-weight: 700; }
+  .weight-row .w-spec.w-900 { font-weight: 900; }
+
+  /* Pairings */
+  .pair-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+  }
+  .pair-card {
+    border: 1px solid var(--slate-200);
+    border-radius: var(--r);
+    padding: 36px;
+    background: white;
+  }
+  .pair-card.dark { background: var(--black); border-color: var(--black); color: white; }
+  .pair-card .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: -0.01em; text-transform: uppercase;
+    color: var(--slate-500); margin-bottom: 14px;
+  }
+  .pair-card.dark .eyebrow { color: rgba(255,255,255,0.5); }
+  .pair-card .heading {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 500;
+    font-size: 40px; letter-spacing: -0.01em;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal; line-height: 1.05;
+    margin: 0 0 14px;
+  }
+  .pair-card .heading em {
+    font-style: normal; font-weight: 500;
+    background: var(--grad-bp-soft);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .pair-card .body {
+    font-size: 15px; line-height: 1.6;
+    color: var(--slate-500); margin: 0;
+  }
+  .pair-card.dark .body { color: rgba(255,255,255,0.65); }
+
+  /* ================= PATTERNS ================= */
+  .patterns-hero {
+    aspect-ratio: 24/9;
+    border-radius: var(--r);
+    background:
+      radial-gradient(80% 120% at 100% 0%, rgba(255,31,168,0.55), transparent 55%),
+      radial-gradient(80% 120% at 0% 100%, rgba(37,99,235,0.55), transparent 55%),
+      var(--black);
+    position: relative; overflow: hidden;
+    margin-bottom: 56px;
+  }
+  .patterns-hero .grid-overlay {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .patterns-hero .scan-overlay {
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 3px);
+    mix-blend-mode: overlay;
+  }
+  .patterns-hero .pattern-label {
+    position: absolute; bottom: 28px; left: 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: -0.01em;
+    text-transform: uppercase; color: rgba(255,255,255,0.7);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .patterns-hero .pattern-label .dot {
+    width: 6px; height: 6px; background: var(--blue-500); border-radius: 999px;
+    box-shadow: 0 0 0 4px rgba(37,99,235,0.25);
+  }
+
+  .pattern-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .pattern-tile {
+    border: 1px solid var(--slate-200);
+    border-radius: var(--r);
+    overflow: hidden;
+    background: white;
+  }
+  .pattern-tile .surface {
+    aspect-ratio: 4/3;
+    position: relative; overflow: hidden;
+  }
+  .pattern-tile .surface.grid-dark {
+    background:
+      linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px) 0 0/32px 32px,
+      linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px) 0 0/32px 32px,
+      var(--black);
+  }
+  .pattern-tile .surface.grid-light {
+    background:
+      linear-gradient(to right, var(--slate-200) 1px, transparent 1px) 0 0/24px 24px,
+      linear-gradient(to bottom, var(--slate-200) 1px, transparent 1px) 0 0/24px 24px,
+      white;
+  }
+  .pattern-tile .surface.scanlines {
+    background:
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 4px),
+      var(--grad-night);
+  }
+  .pattern-tile .surface.spectrum {
+    background: var(--grad-bp);
+    position: relative;
+  }
+  .pattern-tile .surface.spectrum::after {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .pattern-tile .meta {
+    padding: 18px 22px;
+    border-top: 1px solid var(--slate-100);
+    display: flex; flex-direction: column; gap: 6px; align-items: flex-start;
+  }
+  .pattern-tile .meta .name {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 16px; color: var(--black);
+    letter-spacing: -0.01em;
+  }
+  .pattern-tile .meta .role {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: var(--slate-500);
+    letter-spacing: -0.01em;
+  }
+
+  .principles {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 24px; margin-top: 56px;
+  }
+  .principle {
+    border: 1px solid var(--slate-200);
+    border-radius: var(--r);
+    padding: 32px;
+    background: white;
+  }
+  .principle .num {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: var(--blue-500);
+    letter-spacing: -0.01em;
+  }
+  .principle h4 {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 500;
+    font-size: 22px; letter-spacing: -0.01em;
+    margin: 10px 0 10px;
+    color: var(--black);
+  }
+  .principle p {
+    font-size: 14px; line-height: 1.6;
+    color: var(--slate-500); margin: 0;
+  }
+
+  /* ================= ROUNDNESS ================= */
+  .round-hero {
+    background: var(--black); color: white;
+    border-radius: 4px;
+    padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr;
+    margin-bottom: 64px;
+    position: relative; overflow: hidden;
+    min-height: 480px;
+  }
+  .round-hero .left {
+    padding: 56px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+  }
+  .round-hero .left::before {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+    pointer-events: none;
+  }
+  .round-hero .left > * { position: relative; }
+  .round-hero .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: -0.01em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .round-hero .eyebrow .dot {
+    width: 6px; height: 6px; border-radius: 999px;
+    background: var(--blue-500);
+    box-shadow: 0 0 0 4px rgba(37,99,235,0.2);
+  }
+  .round-hero h3 {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 500;
+    font-size: 36px; line-height: 1.05; letter-spacing: -0.01em;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+    margin: 24px 0 16px;
+    max-width: 26ch;
+  }
+  .round-hero p {
+    font-size: 15px; line-height: 1.65;
+    color: rgba(255,255,255,0.65); margin: 0;
+    max-width: 38ch;
+  }
+  .round-hero .specs-line {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 0; margin-top: 32px;
+    padding-top: 24px;
+  }
+  .round-hero .specs-line div { display: flex; flex-direction: column; gap: 6px; }
+  .round-hero .specs-line .lbl {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; letter-spacing: -0.01em;
+    color: rgba(255,255,255,0.4); text-transform: uppercase;
+  }
+  .round-hero .specs-line .val {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    color: white; font-size: 16px; letter-spacing: -0.01em;
+  }
+  .round-hero .right {
+    display: grid; place-items: center;
+    background: var(--grad-night);
+    position: relative; overflow: hidden;
+  }
+  .round-hero .right::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(60% 60% at 70% 30%, rgba(255,31,168,0.45), transparent 60%),
+      radial-gradient(60% 60% at 30% 70%, rgba(37,99,235,0.45), transparent 60%);
+  }
+  .round-hero .right .num-badge {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 400;
+    font-size: clamp(180px, 22vw, 320px);
+    line-height: 0.8; letter-spacing: -0.01em;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+    color: white;
+    margin: 0;
+    position: relative; z-index: 1;
+    display: flex; align-items: flex-start; gap: 8px;
+  }
+  .round-hero .right .num-badge .px {
+    font-size: 0.18em; letter-spacing: -0.01em;
+    color: rgba(255,255,255,0.6);
+    margin-top: 32px;
+    font-weight: 500;
+  }
+
+  .radius-scale {
+    display: grid; grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--r);
+    background: white;
+  }
+  .radius-tile {
+    padding: 28px 24px;
+    display: flex; flex-direction: column; gap: 18px;
+    border-right: 1px solid var(--slate-200);
+    position: relative;
+  }
+  .radius-tile:last-child { border-right: 0; }
+  .radius-tile.active { background: linear-gradient(180deg, rgba(255,31,168,0.04), transparent); }
+  .radius-tile.active::before {
+    content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px;
+    background: var(--pink-500);
+  }
+  .radius-tile .swatch-wrap {
+    aspect-ratio: 1;
+    display: grid; place-items: center;
+    background: var(--slate-50);
+    border: 1px dashed var(--slate-200);
+  }
+  .radius-tile.active .swatch-wrap { background: white; border-color: rgba(255,31,168,0.2); }
+  .radius-tile .swatch {
+    width: 70%; aspect-ratio: 1;
+    background: var(--black);
+  }
+  .radius-tile.active .swatch { background: var(--grad-bp); }
+  .radius-tile .meta { display: flex; flex-direction: column; gap: 6px; }
+  .radius-tile .lbl {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; color: var(--slate-500);
+    letter-spacing: -0.01em; text-transform: uppercase;
+  }
+  .radius-tile.active .lbl { color: var(--pink-500); }
+  .radius-tile .val {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 22px; color: var(--black); letter-spacing: -0.01em; line-height: 1;
+  }
+  .radius-tile .use {
+    font-size: 12px; color: var(--slate-500);
+    line-height: 1.5;
+  }
+
+  .round-applications {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; margin-top: 64px;
+  }
+  .round-app {
+    border: 1px solid var(--slate-200);
+    border-radius: var(--r);
+    overflow: hidden;
+    background: white;
+  }
+  .round-app .demo {
+    aspect-ratio: 4/3;
+    display: grid; place-items: center;
+    background: var(--slate-50);
+    padding: 32px;
+    border-bottom: 1px solid var(--slate-200);
+  }
+  .round-app .demo .button-mock {
+    padding: 14px 28px;
+    background: var(--black); color: white;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 14px; letter-spacing: -0.01em;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  }
+  .round-app .demo .card-mock {
+    width: 100%; max-width: 240px;
+    background: white;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 0 0 1px var(--slate-200), 0 12px 28px -16px rgba(10,15,24,0.18);
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .round-app .demo .card-mock .header-row {
+    display: flex; align-items: center; gap: 10px;
+  }
+  .round-app .demo .card-mock .header-row .badge {
+    width: 28px; height: 28px;
+    border-radius: 4px;
+    background: var(--grad-bp);
+  }
+  .round-app .demo .card-mock .header-row .lines { display: flex; flex-direction: column; gap: 5px; flex: 1; }
+  .round-app .demo .card-mock .top-line {
+    height: 6px; width: 70%; background: var(--slate-200);
+    border-radius: 2px;
+  }
+  .round-app .demo .card-mock .body-line {
+    height: 4px; width: 50%; background: var(--slate-200);
+    border-radius: 2px;
+  }
+  .round-app .demo .card-mock .body {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .round-app .demo .card-mock .body div {
+    height: 4px; background: var(--slate-100); border-radius: 2px;
+  }
+  .round-app .demo .input-mock {
+    width: 100%; max-width: 260px;
+    background: white;
+    border: 1px solid var(--slate-300);
+    border-radius: 4px;
+    padding: 14px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; color: var(--slate-500);
+    box-shadow: 0 0 0 4px rgba(37,99,235,0.12), 0 0 0 1px var(--blue-500);
+  }
+  .round-app .meta {
+    padding: 18px 22px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .round-app .meta .name {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 15px; color: var(--black); letter-spacing: -0.01em;
+  }
+  .round-app .meta .desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: var(--slate-500); letter-spacing: -0.01em;
+  }
+
+  .rounded-dont {
+    margin-top: 64px;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--r);
+    background: white;
+    overflow: hidden;
+  }
+  .rounded-dont .header {
+    padding: 22px 28px;
+    border-bottom: 1px solid var(--slate-200);
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 24px;
+  }
+  .rounded-dont .header h3 {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 500;
+    font-size: 22px; letter-spacing: -0.01em;
+    margin: 0; color: var(--black);
+  }
+  .rounded-dont .header .tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: var(--slate-500);
+    letter-spacing: -0.01em;
+  }
+  .rounded-dont .grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+  }
+  .rounded-dont .compare {
+    padding: 32px 28px;
+    display: flex; flex-direction: column; gap: 20px;
+    align-items: stretch;
+    border-right: 1px solid var(--slate-200);
+  }
+  .rounded-dont .compare:last-child { border-right: 0; }
+  .rounded-dont .compare.good {
+    background: linear-gradient(180deg, rgba(255,31,168,0.04), transparent 80%);
+    position: relative;
+  }
+  .rounded-dont .compare.good::before {
+    content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px;
+    background: var(--pink-500);
+  }
+  .rounded-dont .compare .box {
+    width: 100%; aspect-ratio: 1;
+    background: var(--slate-100);
+    border: 1px solid var(--slate-200);
+  }
+  .rounded-dont .compare.good .box {
+    background: var(--black); border: none;
+  }
+  .rounded-dont .compare.r0 .box { border-radius: 0; }
+  .rounded-dont .compare.r4 .box { border-radius: 4px; }
+  .rounded-dont .compare.r12 .box { border-radius: 12px; }
+  .rounded-dont .compare.r999 .box { border-radius: 999px; }
+  .rounded-dont .compare .label {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .rounded-dont .compare .label .top {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .rounded-dont .compare .label .icon {
+    width: 18px; height: 18px;
+    border-radius: 4px;
+    display: grid; place-items: center;
+    font-size: 11px; font-weight: 700;
+  }
+  .rounded-dont .compare.bad .label .icon { background: #FEF3F2; color: #B42318; }
+  .rounded-dont .compare.good .label .icon { background: var(--black); color: white; }
+  .rounded-dont .compare .label .val {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 15px; color: var(--black); letter-spacing: -0.01em;
+  }
+  .rounded-dont .compare .label .desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: var(--slate-500);
+    letter-spacing: -0.01em; line-height: 1.5;
+  }
+
+    /* ================= TONE OF VOICE ================= */
+  .tone-mantra {
+    background: var(--black); color: white;
+    border-radius: var(--r);
+    padding: 80px 64px;
+    margin-bottom: 56px;
+    position: relative; overflow: hidden;
+  }
+  .tone-mantra::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 90% 100%, rgba(255,31,168,0.4), transparent 60%),
+                radial-gradient(ellipse 60% 70% at 10% 0%, rgba(37,99,235,0.45), transparent 65%);
+  }
+  .tone-mantra > * { position: relative; z-index: 1; }
+  .tone-mantra .quote-mark {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 400;
+    font-size: 96px; line-height: 0.6;
+    color: var(--pink-500); margin-bottom: 16px;
+  }
+  .tone-mantra blockquote {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 500;
+    font-size: clamp(36px, 4.6vw, 68px);
+    line-height: 1.05; letter-spacing: -0.01em;
+    margin: 0; color: white;
+    max-width: 1000px;
+  }
+  .tone-mantra blockquote em {
+    font-style: normal; font-weight: 500;
+    background: var(--grad-bp-soft);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .tone-mantra .attr {
+    margin-top: 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: -0.01em;
+    text-transform: uppercase; color: rgba(255,255,255,0.55);
+  }
+
+  /* Pillars */
+  .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .pillar {
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--r);
+    padding: 28px;
+    display: flex; flex-direction: column; gap: 12px;
+    min-height: 220px;
+  }
+  .pillar .num {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: var(--slate-500);
+    letter-spacing: -0.01em;
+  }
+  .pillar h4 {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 500;
+    font-size: 26px; letter-spacing: -0.01em; line-height: 1.05;
+    margin: 0; color: var(--black);
+  }
+  .pillar p {
+    font-size: 14px; line-height: 1.55;
+    color: var(--slate-500); margin: 0;
+  }
+
+  /* Voice spectrum */
+  .spectrum {
+    display: flex; flex-direction: column;
+    border-top: 1px solid var(--slate-200);
+  }
+  .spec-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    gap: 32px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--slate-200);
+    align-items: center;
+  }
+  .spec-row .label-l { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 18px; color: var(--black); letter-spacing: -0.01em; }
+  .spec-row .label-r { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 14px; color: var(--slate-400); text-align: right; letter-spacing: -0.01em; text-decoration: line-through; }
+  .spec-row .bar {
+    height: 6px; border-radius: 999px; background: var(--slate-200);
+    position: relative;
+  }
+  .spec-row .bar .fill {
+    position: absolute; top: 0; left: 0; bottom: 0;
+    background: var(--grad-bp-soft);
+    border-radius: 999px;
+  }
+  .spec-row .bar .pin {
+    position: absolute; top: 50%; transform: translate(-50%, -50%);
+    width: 16px; height: 16px; border-radius: 999px;
+    background: white; border: 2px solid var(--pink-500);
+    box-shadow: 0 2px 8px rgba(255,31,168,0.35);
+  }
+
+  /* Copy examples */
+  .copy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .copy-card {
+    border: 1px solid var(--slate-200);
+    border-radius: var(--r);
+    overflow: hidden; background: white;
+  }
+  .copy-card .copy-head {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--slate-200);
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: -0.01em; text-transform: uppercase;
+    color: var(--slate-500);
+  }
+  .copy-card .copy-head .icon {
+    width: 18px; height: 18px; border-radius: 999px;
+    display: grid; place-items: center; font-weight: 700; font-size: 11px;
+  }
+  .copy-card.do .copy-head .icon { background: #ECFDF3; color: #15803d; }
+  .copy-card.dont .copy-head .icon { background: #FEF3F2; color: #B42318; }
+  .copy-card.dont .copy-head { color: var(--slate-500); }
+  .copy-card .copy-body {
+    padding: 28px;
+    display: flex; flex-direction: column; gap: 20px;
+  }
+  .copy-line {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 400;
+    font-size: 22px; line-height: 1.25; letter-spacing: -0.01em;
+    color: var(--black);
+  }
+  .copy-card.dont .copy-line { color: var(--slate-400); }
+  .copy-line + .copy-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; letter-spacing: -0.01em; text-transform: uppercase;
+    color: var(--slate-500);
+    margin-top: -10px;
+  }
+
+  /* Lexicon */
+  .lex-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+  .lex-card {
+    background: white; border: 1px solid var(--slate-200);
+    border-radius: var(--r); padding: 28px;
+  }
+  .lex-card h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: -0.01em; text-transform: uppercase;
+    color: var(--slate-500); margin: 0 0 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .lex-card h4 .badge {
+    padding: 3px 8px; border-radius: var(--r);
+    font-size: 10px;
+  }
+  .lex-card.use h4 .badge { background: var(--black); color: white; }
+  .lex-card.lose h4 .badge { background: var(--slate-200); color: var(--slate-500); }
+  .lex-card ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+  .lex-card li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--slate-100);
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 16px;
+  }
+  .lex-card li:last-child { border-bottom: 0; }
+  .lex-card .word {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 400;
+    font-size: 18px; letter-spacing: -0.01em; color: var(--black);
+  }
+  .lex-card.lose .word { color: var(--slate-400); text-decoration: line-through; }
+  .lex-card .why {
+    font-size: 13px; color: var(--slate-500);
+    text-align: right; max-width: 200px;
+  }
+
+  /* Personality table */
+  .personality {
+    border-top: 1px solid var(--slate-200);
+  }
+  .person-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    gap: 32px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--slate-200);
+    align-items: center;
+  }
+  .person-row .label-l {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    font-weight: 400; font-size: 16px; letter-spacing: -0.01em;
+    color: var(--black);
+  }
+  .person-row .label-r {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    font-weight: 400; font-size: 14px; color: var(--slate-400);
+    text-align: right; letter-spacing: -0.01em;
+  }
+  .person-row .scale {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;
+  }
+  .person-row .scale .cell {
+    height: 28px; border-radius: var(--r);
+    background: var(--slate-100);
+    display: grid; place-items: center;
+    font-family: 'Inter', sans-serif; font-size: 11px;
+    color: var(--slate-400);
+    transition: background 200ms;
+  }
+  .person-row .scale .cell.active {
+    background: var(--blue-500); color: white;
+  }
+  .person-row .scale .cell.active.pink-mark {
+    background: var(--blue-500);
+  }
+
+  /* Archetypes */
+  .archetypes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .arch-card {
+    background: white; border: 1px solid var(--slate-200);
+    border-radius: var(--r);
+    padding: 32px;
+    display: flex; flex-direction: column; gap: 16px;
+    position: relative;
+  }
+  .arch-card.featured {
+    background: var(--black); color: white; border-color: var(--black);
+    overflow: hidden;
+  }
+  .arch-card.featured::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 100% 100%, rgba(255,31,168,0.32), transparent 65%),
+                radial-gradient(ellipse 60% 60% at 0% 0%, rgba(37,99,235,0.30), transparent 65%);
+  }
+  .arch-card.featured > * { position: relative; z-index: 1; }
+  .arch-card .order {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: -0.01em; text-transform: uppercase;
+    color: var(--slate-500);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .arch-card.featured .order { color: rgba(255,255,255,0.5); }
+  .arch-card .order .badge {
+    background: var(--slate-100); color: var(--slate-700);
+    padding: 3px 8px; border-radius: var(--r);
+    font-weight: 500;
+  }
+  .arch-card.featured .order .badge { background: var(--pink-500); color: white; }
+  .arch-card h4 {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    font-weight: 500; font-size: 36px; letter-spacing: -0.01em;
+    line-height: 1; margin: 0; color: var(--black);
+  }
+  .arch-card.featured h4 { color: white; }
+  .arch-card .arch-section { display: flex; flex-direction: column; gap: 4px; }
+  .arch-card .arch-section .lbl {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; letter-spacing: -0.01em; text-transform: uppercase;
+    color: var(--slate-500);
+  }
+  .arch-card.featured .arch-section .lbl { color: rgba(255,255,255,0.5); }
+  .arch-card .arch-section .val {
+    font-size: 14px; line-height: 1.5; color: var(--slate-700);
+  }
+  .arch-card.featured .arch-section .val { color: rgba(255,255,255,0.85); }
+
+  /* Persona card */
+  .persona {
+    background: var(--black); color: white;
+    border-radius: var(--r);
+    padding: 56px;
+    display: grid; grid-template-columns: 280px 1fr;
+    gap: 56px;
+    margin-bottom: 56px;
+    position: relative; overflow: hidden;
+    align-items: center;
+  }
+  .persona::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 100% 0%, rgba(37,99,235,0.30), transparent 65%),
+                radial-gradient(ellipse 50% 50% at 0% 100%, rgba(255,31,168,0.26), transparent 65%);
+  }
+  .persona > * { position: relative; z-index: 1; }
+  .persona .portrait {
+    aspect-ratio: 1/1;
+    border-radius: var(--r);
+    background: linear-gradient(135deg, #2F3847, #0A0F18);
+    display: grid; place-items: center;
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: 120px; letter-spacing: -0.01em;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden; position: relative;
+  }
+  .persona .portrait::after {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255,31,168,0.4), transparent 60%);
+  }
+  .persona .portrait span { position: relative; z-index: 1; }
+  .persona .lbl {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: -0.01em; text-transform: uppercase;
+    color: rgba(255,255,255,0.55); margin-bottom: 14px;
+  }
+  .persona .name {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    font-weight: 500; font-size: 64px; letter-spacing: -0.01em; line-height: 1;
+    margin: 0 0 18px; color: white;
+  }
+  .persona .desc {
+    font-size: 17px; line-height: 1.55; color: rgba(255,255,255,0.75);
+    margin: 0 0 0 0; max-width: 520px;
+  }
+
+  /* Voice stage (sounds like / doesn't) */
+  .voice-stage {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--r);
+    overflow: hidden;
+    background: white;
+  }
+  .voice-pane { padding: 36px 36px 40px; position: relative; }
+  .voice-pane.voice-tone { border-right: 1px solid var(--slate-200); }
+  .voice-pane.voice-versus { background: var(--slate-50); }
+  .vp-head {
+    display: flex; align-items: flex-start; gap: 16px;
+    margin-bottom: 22px;
+  }
+  .vp-num {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 400;
+    font-size: 44px; line-height: 0.85; letter-spacing: -0.01em;
+    color: var(--blue-500);
+    min-width: 56px;
+  }
+  .vp-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; letter-spacing: -0.01em; text-transform: uppercase;
+    color: var(--slate-500); margin-bottom: 4px;
+  }
+  .vp-eyebrow.alert { color: var(--pink-500); }
+  .vp-title {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 500;
+    font-size: 22px; letter-spacing: -0.01em;
+    color: var(--black);
+  }
+  .vp-lead {
+    font-size: 14px; line-height: 1.55; color: var(--slate-500);
+    margin: 0 0 22px; max-width: 42ch;
+  }
+  .tone-cluster { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tone-chip {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 14px; letter-spacing: -0.01em;
+    background: white; border: 1px solid var(--slate-200);
+    color: var(--black);
+    padding: 8px 14px; border-radius: var(--r);
+    line-height: 1;
+  }
+  .tone-chip:nth-child(3n+1) { background: var(--slate-50); }
+
+  .vs-table { display: flex; flex-direction: column; }
+  .vs-row {
+    display: grid; grid-template-columns: 1fr 56px 1fr;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--slate-200);
+  }
+  .vs-row:last-child { border-bottom: 0; }
+  .vs-yes, .vs-no {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 16px; letter-spacing: -0.01em;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .vs-yes { color: var(--black); }
+  .vs-no { color: var(--slate-400); justify-content: flex-end; text-align: right; }
+  .vs-yes .dot {
+    width: 8px; height: 8px; border-radius: 999px;
+    background: var(--blue-500);
+    flex-shrink: 0;
+  }
+  .vs-no .x {
+    width: 12px; height: 12px;
+    flex-shrink: 0; position: relative;
+  }
+  .vs-no .x::before, .vs-no .x::after {
+    content: ""; position: absolute; left: 50%; top: 50%;
+    width: 12px; height: 1px; background: var(--slate-300);
+  }
+  .vs-no .x::before { transform: translate(-50%, -50%) rotate(45deg); }
+  .vs-no .x::after { transform: translate(-50%, -50%) rotate(-45deg); }
+  .vs-sep {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; letter-spacing: -0.01em; text-transform: uppercase;
+    color: var(--slate-400); text-align: center;
+  }
+
+  .avoid-band {
+    margin-top: 24px;
+    background: var(--black); color: white;
+    border-radius: var(--r);
+    padding: 36px 36px;
+    display: grid; grid-template-columns: 320px 1fr;
+    gap: 36px; align-items: center;
+  }
+  .avoid-band .vp-eyebrow.alert { color: var(--pink-300); }
+  .avoid-title {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 500;
+    font-size: 22px; letter-spacing: -0.01em;
+    line-height: 1.2; max-width: 28ch;
+  }
+  .avoid-r { display: flex; flex-wrap: wrap; gap: 6px; }
+  .avoid-chip {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 14px; letter-spacing: -0.01em;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.7);
+    padding: 8px 14px; border-radius: var(--r);
+    line-height: 1;
+  }
+
+  /* Cadence */
+  .cadence-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .cadence-card {
+    background: white; border: 1px solid var(--slate-200);
+    border-radius: var(--r); padding: 22px 24px;
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .cadence-card .num {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: var(--blue-500); font-weight: 600;
+    letter-spacing: -0.01em; padding-top: 3px;
+    flex: 0 0 auto;
+  }
+  .cadence-card .text {
+    font-size: 15px; line-height: 1.55; color: var(--black);
+  }
+  .cadence-card .text strong {
+    font-weight: 700; color: var(--black);
+  }
+
+  /* Rhythm stack — cadence redesign */
+  .rhythm-stack {
+    border-top: 1px solid var(--slate-200);
+    border-bottom: 1px solid var(--slate-200);
+  }
+  .rhythm-row {
+    display: grid;
+    grid-template-columns: 64px 200px 1fr;
+    gap: 32px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--slate-100);
+    align-items: center;
+  }
+  .rhythm-row:last-child { border-bottom: 0; }
+  .rh-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; letter-spacing: -0.01em;
+    color: var(--slate-400);
+  }
+  .rh-bar {
+    height: 6px; background: var(--slate-100);
+    border-radius: 999px; position: relative;
+    overflow: hidden;
+  }
+  .rh-bar span {
+    display: block; height: 100%;
+    background: linear-gradient(90deg, var(--blue-500), var(--pink-500));
+    border-radius: 999px;
+  }
+  .rh-text {
+    font-size: 16px; line-height: 1.5; color: var(--slate-500);
+    letter-spacing: -0.01em;
+  }
+  .rh-text strong {
+    font-weight: 700; color: var(--black);
+  }
+
+  /* "How the brand should not feel" chips */
+  .not-feel { display: flex; flex-wrap: wrap; gap: 8px; }
+  .nf-chip {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 16px; letter-spacing: -0.01em;
+    background: white; border: 1px solid var(--slate-200);
+    color: var(--slate-400);
+    padding: 12px 18px; border-radius: var(--r);
+    line-height: 1;
+  }
+
+  /* sub-head em accent */
+  .sub-head h3 em {
+    font-style: normal; font-weight: 500;
+    background: var(--grad-bp-soft);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+
+
+  .end {
+    margin-top: 120px;
+    padding: 56px 0 0;
+    border-top: 1px solid var(--slate-200);
+    display: flex; justify-content: space-between; align-items: flex-end;
+    gap: 32px;
+  }
+  .end .end-mark {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; font-weight: 400;
+    font-size: 80px; line-height: 0.85;
+    letter-spacing: -0.01em;
+    background: var(--grad-bp-soft);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .end .end-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: var(--slate-500);
+    text-align: right;
+    line-height: 1.7;
+  }
+  .end .end-meta strong { color: var(--black); font-weight: 500; }
+
+  
+  /* ============================================================
+     RESPONSIVE — comprehensive mobile-first breakpoints
+     ============================================================ */
+
+  /* ── 1100px: narrow desktop / large tablet ── */
+  @media (max-width: 1100px) {
+    .shell { grid-template-columns: 1fr; }
+    .side {
+      position: static; height: auto;
+      flex-direction: row; flex-wrap: wrap; align-items: center;
+      padding: 20px 28px; gap: 0;
+    }
+    .side-brand { padding-bottom: 0; border-bottom: none; margin-right: auto; }
+    .side-section { display: none; }
+    .side-nav {
+      flex-direction: row; flex-wrap: wrap; gap: 4px 2px;
+      width: 100%; margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .side-nav a { padding: 7px 10px; font-size: 12px; }
+    .side-nav a::before { display: none; }
+    .side-nav a .num { display: none; }
+    .side-meta { display: none; }
+    .page { padding: 56px 40px 96px; }
+    .palette { grid-template-columns: 1fr 1fr; }
+    .palette .pal-card.hero { grid-column: 1 / span 2; grid-row: auto; min-height: 400px; }
+    .grad-row { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 { font-size: clamp(56px, 7vw, 90px); }
+    .hero-meta { grid-template-columns: repeat(2, 1fr); }
+    .hero-meta .cell:nth-child(2)::after { display: none; }
+    .hero-meta .cell:nth-child(4)::after { display: none; }
+    .face-stage { grid-template-columns: 1fr; }
+    .face-card { min-height: auto; }
+    .face-card.display { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .face-pair { grid-template-columns: 1fr; gap: 24px; }
+    .weights-split { grid-template-columns: 1fr; }
+    .weights-col + .weights-col { border-left: none; border-top: 1px solid var(--slate-200); }
+    .pair-grid { grid-template-columns: 1fr; }
+    .pattern-grid { grid-template-columns: repeat(2, 1fr); }
+    .principles { grid-template-columns: 1fr 1fr; }
+    .round-hero { grid-template-columns: 1fr; }
+    .round-hero .right { min-height: 280px; }
+    .round-hero .left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .radius-scale { grid-template-columns: repeat(3, 1fr); }
+    .radius-tile { border-bottom: 1px solid var(--slate-200); }
+    .radius-tile:nth-child(3) { border-right: none; }
+    .round-applications { grid-template-columns: 1fr 1fr; }
+    .rounded-dont .grid { grid-template-columns: repeat(2, 1fr); }
+    .rounded-dont .compare:nth-child(2) { border-right: none; }
+    .archetypes { grid-template-columns: 1fr 1fr; }
+    .arch-card.featured { grid-column: 1 / span 2; }
+    .persona { grid-template-columns: 200px 1fr; gap: 32px; }
+    .voice-stage { grid-template-columns: 1fr; }
+    .voice-pane.voice-tone { border-right: none; border-bottom: 1px solid var(--slate-200); }
+    .avoid-band { grid-template-columns: 1fr; }
+    .pillars { grid-template-columns: 1fr 1fr; }
+    .copy-grid { grid-template-columns: 1fr; }
+    .lex-grid { grid-template-columns: 1fr; }
+    .do-grid { grid-template-columns: 1fr; }
+    .sec-title { font-size: clamp(44px, 5.5vw, 72px); }
+  }
+
+  /* ── 768px: tablet portrait ── */
+  @media (max-width: 768px) {
+    .page { padding: 40px 24px 80px; }
+    .section { padding-top: 72px; }
+
+    /* Hero */
+    .hero h1 { font-size: clamp(40px, 9vw, 72px); }
+    .hero-sub { font-size: 17px; }
+    .hero-meta { grid-template-columns: 1fr 1fr; }
+    .hero-meta .cell:first-child::after,
+    .hero-meta .cell:nth-child(3)::after { display: none; }
+
+    /* Headings */
+    .sec-title { font-size: clamp(36px, 7vw, 60px); }
+    .sec-lead { font-size: 16px; }
+
+    /* Side nav collapses further */
+    .side { padding: 16px 20px; }
+    .side-nav a { padding: 6px 9px; font-size: 11px; }
+
+    /* Colors */
+    .palette { grid-template-columns: 1fr; }
+    .palette .pal-card.hero { grid-column: 1; min-height: 360px; }
+    .palette .pal-card.hero .specs { grid-template-columns: 1fr 1fr; }
+    .usage-bar .legend { grid-template-columns: 1fr; }
+    .usage-bar .legend .item { border-right: none; border-bottom: 1px solid var(--slate-200); }
+    .usage-bar .legend .item:last-child { border-bottom: none; }
+    .scale-row { grid-template-columns: repeat(6, 1fr); overflow-x: auto; }
+    .do-grid { grid-template-columns: 1fr; }
+
+    /* Gradients */
+    .grad-row { grid-template-columns: 1fr; }
+
+    /* Typography */
+    .scale-line { grid-template-columns: 64px 1fr; gap: 16px; }
+    .scale-line .specs { display: none; }
+    .scale-line .face-pill { display: none; }
+    .face-pair { padding: 32px 24px; }
+    .pair-grid { grid-template-columns: 1fr; }
+
+    /* Patterns */
+    .pattern-grid { grid-template-columns: 1fr 1fr; }
+    .patterns-hero { aspect-ratio: 16/9; }
+    .principles { grid-template-columns: 1fr; }
+
+    /* Roundness */
+    .round-hero { min-height: auto; }
+    .round-hero .left { padding: 36px 28px; }
+    .round-hero .right { min-height: 220px; }
+    .round-hero .right .num-badge { font-size: clamp(120px, 20vw, 200px); }
+    .radius-scale { grid-template-columns: repeat(3, 1fr); }
+    .round-applications { grid-template-columns: 1fr; }
+    .rounded-dont .grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Voice */
+    .persona {
+      grid-template-columns: 1fr;
+      padding: 36px 28px;
+    }
+    .persona .portrait { width: 120px; height: 120px; font-size: 56px; justify-self: start; }
+    .persona .name { font-size: 44px; }
+    .archetypes { grid-template-columns: 1fr; }
+    .arch-card.featured { grid-column: 1; }
+    .spec-row { grid-template-columns: 140px 1fr 140px; gap: 16px; }
+    .person-row { grid-template-columns: 120px 1fr 120px; gap: 16px; }
+    .avoid-band { padding: 28px 24px; gap: 24px; }
+    .pillar { min-height: auto; }
+    .copy-grid, .lex-grid { grid-template-columns: 1fr; }
+    .cadence-grid { grid-template-columns: 1fr; }
+
+    /* Sub-head */
+    .sub-head { flex-direction: column; gap: 6px; align-items: flex-start; }
+
+    /* End */
+    .end { flex-direction: column; align-items: flex-start; gap: 24px; }
+  }
+
+  /* ── 480px: mobile ── */
+  @media (max-width: 480px) {
+    .page { padding: 32px 16px 64px; }
+    .section { padding-top: 56px; }
+
+    /* Side nav: overflow-x scrollable row */
+    .side { padding: 12px 16px; overflow-x: auto; }
+    .side-brand .side-logo { height: 28px; }
+    .side-nav { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px; width: auto; }
+    .side-nav::-webkit-scrollbar { height: 0; }
+    .side-nav a { white-space: nowrap; font-size: 11px; flex-shrink: 0; }
+
+    /* Hero */
+    .hero h1 { font-size: clamp(32px, 10vw, 52px); }
+    .hero-sub { font-size: 15px; margin-bottom: 36px; }
+    .hero-meta { grid-template-columns: 1fr 1fr; gap: 0; }
+    .hero-meta .cell { padding: 16px 0; }
+    .hero-eyebrow { font-size: 10px; gap: 8px; flex-wrap: wrap; }
+
+    /* Headings */
+    .sec-title { font-size: clamp(28px, 9vw, 48px); }
+    .sec-lead { font-size: 15px; }
+    .sec-head { margin-bottom: 36px; }
+    .sec-eyebrow { margin-bottom: 12px; }
+
+    /* Colors */
+    .palette .pal-card.hero .specs { grid-template-columns: 1fr; }
+    .palette .pal-card .name { font-size: 36px; }
+    .usage-bar .ratio { height: 44px; }
+    .usage-bar .ratio .seg { padding: 0 12px; font-size: 10px; }
+    .usage-bar .ratio .seg .pct-num { font-size: 14px; }
+    .scale-row { grid-template-columns: repeat(6, minmax(40px, 1fr)); }
+    .scale-row .step { padding: 8px 6px; }
+    .scale-row .step .hex { display: none; }
+
+    /* Gradients */
+    .grad-row { grid-template-columns: 1fr; }
+    .grad-tile .surface { aspect-ratio: 16/9; }
+
+    /* Typography */
+    .face-stage { grid-template-columns: 1fr; }
+    .face-card { padding: 28px 24px 24px; }
+    .face-card .face-glyph { font-size: clamp(80px, 18vw, 120px); margin-top: 32px; }
+    .face-card .face-meta { grid-template-columns: 1fr; gap: 12px; }
+    .scale-line { grid-template-columns: 52px 1fr; gap: 12px; }
+    .scale-line.s-display .sample { font-size: 52px; }
+    .scale-line.s-h1 .sample { font-size: 40px; }
+    .scale-line.s-h2 .sample { font-size: 32px; }
+    .scale-line.s-h3 .sample { font-size: 24px; }
+    .weights-split { grid-template-columns: 1fr; }
+    .pair-grid { grid-template-columns: 1fr; }
+
+    /* Patterns */
+    .pattern-grid { grid-template-columns: 1fr 1fr; }
+    .principles { grid-template-columns: 1fr; }
+
+    /* Roundness */
+    .round-hero { grid-template-columns: 1fr; }
+    .round-hero .left { padding: 28px 20px; }
+    .round-hero .specs-line { grid-template-columns: 1fr 1fr; }
+    .radius-scale { grid-template-columns: repeat(2, 1fr); }
+    .radius-tile:nth-child(even) { border-right: none; }
+    .radius-tile:nth-child(3) { border-right: 1px solid var(--slate-200); }
+    .rounded-dont .grid { grid-template-columns: 1fr 1fr; }
+    .round-applications { grid-template-columns: 1fr; }
+
+    /* Voice */
+    .persona { padding: 28px 20px; gap: 20px; }
+    .persona .name { font-size: 36px; }
+    .tone-mantra { padding: 48px 28px; }
+    .tone-mantra blockquote { font-size: clamp(24px, 6vw, 40px); }
+    .pillars { grid-template-columns: 1fr; }
+    .spec-row { grid-template-columns: 1fr; gap: 8px; }
+    .spec-row .label-r { text-align: left; }
+    .person-row { grid-template-columns: 1fr; gap: 8px; }
+    .person-row .label-r { text-align: left; font-size: 12px; }
+    .archetypes { grid-template-columns: 1fr; }
+    .arch-card.featured { grid-column: 1; }
+    .voice-stage { grid-template-columns: 1fr; }
+    .avoid-band { grid-template-columns: 1fr; padding: 24px 20px; }
+    .rhythm-row { grid-template-columns: 40px 1fr; gap: 12px; }
+    .rhythm-row .rh-bar { display: none; }
+    .not-feel { gap: 6px; }
+    .nf-chip { font-size: 14px; padding: 9px 14px; }
+
+    /* Misc */
+    .grad-hero { aspect-ratio: 3/2; padding: 24px; }
+    .grad-hero h3 { font-size: clamp(48px, 10vw, 80px); }
+    .patterns-hero { aspect-ratio: 4/3; }
+    .end .end-mark { font-size: 56px; }
+    .end .end-logo { height: 56px; }
+  }
+</style>
+
+</head>
+<body>
+
+<div class="shell">
+
+  <aside class="side">
+    <div class="side-brand">
+      <img src="data:image/svg+xml,%3Csvg%20width%3D%221482%22%20height%3D%22477%22%20viewBox%3D%220%200%201482%20477%22%20fill%3D%22%23FFFFFF%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M1077.39%20332.213H974.652V127.866C974.652%20122.744%20970.526%20118.603%20965.423%20118.603H945.845V339.371C945.845%20349.598%20954.114%20357.897%20964.303%20357.897H1086.61V341.459C1086.61%20336.336%201082.48%20332.195%201077.38%20332.195L1077.39%20332.213ZM1428.28%20259.231C1431.61%20258.089%201434.74%20256.786%201437.65%20255.269C1449.6%20249.057%201458.4%20240.49%201464.06%20229.567C1469.82%20218.644%201472.7%20206.168%201472.7%20192.139C1472.7%20178.11%201469.82%20165.419%201464.06%20154.389C1458.3%20143.252%201449.44%20134.524%201437.49%20128.205C1425.65%20121.78%201410.39%20118.567%201391.72%20118.567H1311.08V357.879H1330.66C1335.76%20357.879%201339.89%20353.739%201339.89%20348.616V264.407H1392.06C1394.18%20264.407%201396.24%20264.354%201398.28%20264.282L1440.55%20343.244C1445.37%20352.257%201454.76%20357.879%201464.95%20357.879H1482L1428.3%20259.213L1428.28%20259.231ZM1391.08%20238.42H1339.87V144.305H1390.76C1403.67%20144.305%201414.02%20146.286%201421.81%20150.248C1429.6%20154.211%201435.25%20159.779%201438.77%20166.954C1442.4%20174.13%201444.21%20182.536%201444.21%20192.174C1444.21%20201.813%201442.45%20209.951%201438.93%20216.912C1435.41%20223.766%201429.76%20229.067%201421.97%20232.815C1414.18%20236.563%201403.88%20238.438%201391.08%20238.438V238.42ZM1262.54%20332.213H1154.96V249.985H1262.31V224.284H1154.96V144.305H1260.01C1265.12%20144.305%201269.24%20140.164%201269.24%20135.041V118.603H1144.63C1134.44%20118.603%201126.17%20126.903%201126.17%20137.13V339.371C1126.17%20349.598%201134.44%20357.897%201144.63%20357.897H1271.77V341.459C1271.77%20336.336%201267.64%20332.195%201262.54%20332.195V332.213ZM407.166%20112.481L217.399%202.46309C214.625%200.856726%20211.514%200.0356969%20208.384%200.0178485C208.331%200.0178485%20208.277%200%20208.224%200C208.171%200%20208.117%200%20208.064%200.0178485C204.952%200.0356969%20201.84%200.856726%20199.049%202.46309L9.15759%20112.517C3.503%20115.801%200%20121.905%200%20128.455V348.545C0%20355.095%203.503%20361.199%209.15759%20364.483L199.049%20474.537C201.876%20476.179%20205.041%20477%20208.206%20477C211.371%20477%20214.536%20476.179%20217.364%20474.537L407.255%20364.483C412.909%20361.217%20416.412%20355.095%20416.412%20348.545V128.545C416.412%20121.941%20412.874%20115.783%20407.166%20112.481ZM401.671%20122.101C401.903%20122.244%20402.134%20122.405%20402.347%20122.565L331.754%20164.188L225.935%2020.2758L401.671%20122.119V122.101ZM208.224%2014.9392L319.271%20165.955H97.1771L208.224%2014.9392ZM14.7055%20122.155L190.531%2020.2758L84.6944%20164.188L14.1009%20122.565C14.2965%20122.423%2014.4921%20122.28%2014.7055%20122.155ZM11.0958%20133.703L79.0931%20173.79L11.0958%20326.127V133.703ZM11.8248%20351.704L86.7392%20183.893L197.839%20382.171L14.3499%20354.595C13.2474%20353.863%2012.3939%20352.864%2011.8248%20351.704ZM202.676%20463.774L40.489%20369.784L202.676%20394.147V463.774ZM95.6657%20177.092H320.782L208.224%20377.995L95.6657%20177.092ZM213.772%20463.774V394.147L375.959%20369.784L213.772%20463.774ZM402.098%20354.595L218.609%20382.171L329.691%20183.893L404.605%20351.722C404.036%20352.882%20403.183%20353.881%20402.08%20354.613L402.098%20354.595ZM405.37%20326.127L337.355%20173.79L405.37%20133.685V326.109V326.127ZM877.083%20127.866V273.349C877.083%20285.022%20874.523%20295.41%20869.402%20304.513C864.281%20313.615%20856.972%20320.79%20847.477%20326.038C837.981%20331.178%20826.619%20333.748%20813.389%20333.748C800.16%20333.748%20788.744%20331.178%20779.142%20326.038C769.54%20320.79%20762.178%20313.615%20757.057%20304.513C751.936%20295.41%20749.375%20285.022%20749.375%20273.349V127.866C749.375%20122.744%20745.25%20118.603%20740.146%20118.603H720.569V275.598C720.569%20291.983%20724.41%20306.601%20732.091%20319.452C739.773%20332.195%20750.549%20342.262%20764.419%20349.651C778.395%20357.041%20794.719%20360.735%20813.389%20360.735C832.06%20360.735%20848.33%20357.041%20862.182%20349.651C876.052%20342.262%20886.774%20332.195%20894.349%20319.452C902.031%20306.601%20905.872%20291.983%20905.872%20275.598V118.603H886.294C881.191%20118.603%20877.066%20122.744%20877.066%20127.866H877.083ZM672.345%20332.213H564.765V249.985H672.114V224.284H564.765V144.305H669.82C674.923%20144.305%20679.048%20140.164%20679.048%20135.041V118.603H554.434C544.245%20118.603%20535.977%20126.903%20535.977%20137.13V339.371C535.977%20349.598%20544.245%20357.897%20554.434%20357.897H681.573V341.459C681.573%20336.336%20677.448%20332.195%20672.345%20332.195V332.213Z%22%20fill%3D%22white%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E" alt="EULER" class="side-logo">
+    </div>
+
+    <div class="side-section">Brand Guidelines</div>
+    <nav class="side-nav" id="nav">
+      <a href="#intro" data-target="intro"><span class="num">00</span>Introduction</a>
+      <a href="#colors" data-target="colors"><span class="num">01</span>Colors</a>
+      <a href="#gradients" data-target="gradients"><span class="num">02</span>Gradients</a>
+      <a href="#typography" data-target="typography"><span class="num">03</span>Typography</a>
+      <a href="#patterns" data-target="patterns"><span class="num">04</span>Patterns</a>
+      <a href="#roundness" data-target="roundness"><span class="num">05</span>Roundness</a>
+      <a href="#voice" data-target="voice"><span class="num">06</span>Tone of voice &amp; personality</a>
+    </nav>
+
+    <div class="side-meta">
+      <div class="row"><span>Version</span><strong>v3.0</strong></div>
+      <div class="row"><span>Updated</span><strong>May 2026</strong></div>
+      <div class="row"><span>Maintainer</span><strong>Brand Studio</strong></div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="page">
+
+      <!-- ===================== INTRO ===================== -->
+      <section class="section hero" id="intro">
+        <div class="hero-eyebrow">
+          <span class="v">v3.0</span>
+          <span class="dot"></span>
+          <span>Effective May 2026 · Internal &amp; partner use</span>
+        </div>
+        <h1 style="font-size: 90px">The Partner Revenue<br><em>Growth Platform.</em></h1>
+        <p class="hero-sub">
+          This is how EULER looks, sounds and behaves. The system on these pages is
+          what makes the platform recognizable, wherever it shows up.
+        </p>
+        <div class="hero-meta">
+          <div class="cell">
+            <div class="lbl">Primary</div>
+            <div class="val">Black</div>
+          </div>
+          <div class="cell">
+            <div class="lbl">Accent</div>
+            <div class="val">Royal Blue</div>
+          </div>
+          <div class="cell">
+            <div class="lbl">Complementary</div>
+            <div class="val">Hot Pink</div>
+          </div>
+          <div class="cell">
+            <div class="lbl">Typeface</div>
+            <div class="val">EB Garamond</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== COLORS ===================== -->
+      <section class="section" id="colors">
+        <div class="sec-head">
+          <div class="sec-eyebrow"><span class="num">01</span><span>Colors</span></div>
+          <h2 class="sec-title">A grounded <em>palette,</em> with one moment of heat.</h2>
+          <p class="sec-lead">
+            Black carries the system. Blue does the work. Pink lights the moment that
+            matters. Treat the three as a hierarchy, not a trio of equals.
+          </p>
+        </div>
+
+        <!-- Usage ratio bar -->
+        <div class="usage-bar">
+          <div class="header">
+            <h3>Usage ratio</h3>
+            <span class="tag">70 / 25 / 5. Never the inverse</span>
+          </div>
+          <div class="ratio">
+            <div class="seg black"><span class="pct-num">70%</span><span>Black</span></div>
+            <div class="seg blue"><span class="pct-num">25%</span><span>Blue</span></div>
+            <div class="seg pink"><span class="pct-num">5%</span></div>
+          </div>
+          <div class="legend">
+            <div class="item">
+              <div class="name">Backgrounds, type, frames</div>
+              <p>The default state of the brand. Surfaces, body text, headings, navigation chrome. Anything that isn't an action or a moment.</p>
+            </div>
+            <div class="item">
+              <div class="name">Interaction &amp; data</div>
+              <p>Links, focused states, charts, gradient anchors. Every blue says "this responds to you". Never used as decoration.</p>
+            </div>
+            <div class="item">
+              <div class="name">Launches, gradient tails, the rare CTA</div>
+              <p>Reserved for energy. If pink shows up more than once on a page, it stops meaning anything. Treat it like a punctuation mark.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scales --><!-- Scales -->
+        <div style="height:80px;"></div>
+
+        <div class="scale-block">
+          <div class="sub-head">
+            <h3>Black &amp; Slate scale</h3>
+            <span class="tag">11 steps · workhorse neutral</span>
+          </div>
+          <div class="scale-row" id="slate-scale"></div>
+        </div>
+
+        <div class="scale-block">
+          <div class="sub-head">
+            <h3>Blue scale</h3>
+            <span class="tag">11 steps · accent · brand-500 anchor</span>
+          </div>
+          <div class="scale-row" id="blue-scale"></div>
+        </div>
+
+        <div class="scale-block">
+          <div class="sub-head">
+            <h3>Pink scale</h3>
+            <span class="tag">11 steps · use sparingly</span>
+          </div>
+          <div class="scale-row" id="pink-scale"></div>
+        </div>
+
+        <!-- DO / DONT -->
+        <div class="sub-head" style="margin-top:88px;">
+          <h3>Application</h3>
+          <span class="tag">Do · Don't</span>
+        </div>
+        <div class="do-grid">
+          <div class="do-card do">
+            <div class="demo dark">
+              <button class="btn-demo" style="background:white;color:var(--black);">Open dashboard →</button>
+            </div>
+            <div class="label"><span class="icon">✓</span><span class="text">Black surfaces with white CTAs. The default product chrome.</span></div>
+          </div>
+          <div class="do-card do">
+            <div class="demo light">
+              <button class="btn-demo" style="background:var(--black);color:white;">Connect data source</button>
+            </div>
+            <div class="label"><span class="icon">✓</span><span class="text">Black as the primary action against light surfaces.</span></div>
+          </div>
+          <div class="do-card dont">
+            <div class="demo bad">
+              <button class="btn-demo" style="background:var(--pink-500);color:white;">Subscribe</button>
+            </div>
+            <div class="label"><span class="icon">✕</span><span class="text">Pink for routine actions. It's reserved, not a default.</span></div>
+          </div>
+          <div class="do-card dont">
+            <div class="demo bad-2">
+              <div class="btn-demo" style="background:linear-gradient(90deg,var(--blue-500),var(--pink-500));color:white;">Buy now</div>
+            </div>
+            <div class="label"><span class="icon">✕</span><span class="text">Gradient buttons. Gradients are surfaces, not interface elements.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== GRADIENTS ===================== -->
+      <section class="section" id="gradients">
+        <div class="sec-head">
+          <div class="sec-eyebrow"><span class="num">02</span><span>Gradients</span></div>
+          <h2 class="sec-title">From <em>order</em> to <em>energy.</em></h2>
+          <p class="sec-lead">
+            Every EULER gradient travels from a structural blue toward the pink horizon.
+            They're for surfaces and atmosphere. Never typography in product UI, never buttons,
+            never small accents.
+          </p>
+        </div>
+
+        <!-- Three gradients side by side -->
+        <div class="grad-row" style="grid-template-columns: repeat(3, 1fr);">
+          <div class="grad-tile bp">
+            <div class="surface">
+              <span class="badge">Signature</span>
+              <div class="stops">
+                <div class="stop" style="background:#1E4FCB"></div>
+                <div class="stop" style="background:#6B3DE8"></div>
+                <div class="stop" style="background:#FF1FA8"></div>
+              </div>
+            </div>
+            <div class="meta">
+              <div class="name">Blue → Pink</div>
+              <div class="use">Hero · Campaigns · Launch covers</div>
+            </div>
+          </div>
+          <div class="grad-tile night">
+            <div class="surface">
+              <span class="badge">Atmospheric</span>
+              <div class="stops">
+                <div class="stop" style="background:#030303"></div>
+                <div class="stop" style="background:#06173D"></div>
+                <div class="stop" style="background:#0E3A9A"></div>
+              </div>
+            </div>
+            <div class="meta">
+              <div class="name">Midnight</div>
+              <div class="use">Hero backgrounds · dark dashboards</div>
+            </div>
+          </div>
+          <div class="grad-tile mono">
+            <div class="surface">
+              <span class="badge">Neutral</span>
+              <div class="stops">
+                <div class="stop" style="background:#0A0F18"></div>
+                <div class="stop" style="background:#2F3847"></div>
+              </div>
+            </div>
+            <div class="meta">
+              <div class="name">Graphite</div>
+              <div class="use">Structural surfaces · neutral fields</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== TYPOGRAPHY ===================== -->
+      <section class="section" id="typography">
+        <div class="sec-head">
+          <div class="sec-eyebrow"><span class="num">03</span><span>Typography</span></div>
+          <h2 class="sec-title">Two faces. <em>One voice.</em></h2>
+          <p class="sec-lead">
+            EB Garamond handles every display moment. The wordmark, headlines, posters, covers. Inter handles every word you have to read. Body copy, UI, captions, dense data. Two faces, two roles, no overlap.
+          </p>
+        </div>
+
+        <!-- Two-up face hero -->
+        <div class="face-stage">
+          <div class="face-card display">
+            <div class="face-tag"><span class="dot"></span><span>Display face · 01</span></div>
+            <div class="face-glyph">Aa</div>
+            <div class="face-name">EB Garamond</div>
+            <div class="face-role">Carries the wordmark and every display moment. Classical and literary, with editorial warmth in the strokes.</div>
+            <div class="face-meta">
+              <div><div class="lbl">Designer</div><div class="val">Georg Duffner</div></div>
+              <div><div class="lbl">Classification</div><div class="val">Old-style serif</div></div>
+              <div><div class="lbl">Weights</div><div class="val">400, 500</div></div>
+              <div><div class="lbl">Used for</div><div class="val">Display, headlines</div></div>
+            </div>
+          </div>
+          <div class="face-card body">
+            <div class="face-tag"><span class="dot"></span><span>Text face · 02</span></div>
+            <div class="face-glyph">Aa</div>
+            <div class="face-name">Inter</div>
+            <div class="face-role">The workhorse. Tuned for screens at small sizes, with a tabular feel that reads cleanly in dense product surfaces.</div>
+            <div class="face-meta">
+              <div><div class="lbl">Designer</div><div class="val">Rasmus Andersson</div></div>
+              <div><div class="lbl">Classification</div><div class="val">Neo-grotesque</div></div>
+              <div><div class="lbl">Weights</div><div class="val">400 / 500 / 600 / 700</div></div>
+              <div><div class="lbl">Used for</div><div class="val">Body, UI, captions</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pairing principle -->
+        <div class="face-pair">
+          <div class="label">The pairing</div>
+          <div class="demo">
+            <h3 class="demo-display">Run the business <em>from one screen.</em></h3>
+            <p class="demo-body">EULER sits between your tools and your team. The headline is set in EB Garamond Medium. Tight, confident, structural. Body copy switches to Inter Regular at a comfortable reading size, where Inter's screen-tuned forms quietly outperform a display face. Every brand surface follows the same rule: display speaks first, text does the work.</p>
+            <div class="demo-rule">
+              <div>Headline → EB Garamond<span> · Medium · -0.035em</span></div>
+              <div>Body → Inter<span> · Regular · -0.005em</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Type scale -->
+        <div class="sub-head" style="margin-top:88px;">
+          <h3>Type scale</h3>
+          <span class="tag">Display in EB Garamond · Text in Inter</span>
+        </div>
+        <div class="scale-list">
+          <div class="scale-line s-display is-display-face">
+            <div class="lvl">Display</div>
+            <div class="sample">Control plane</div>
+            <div class="face-pill is-display">EB Garamond</div>
+            <div class="specs">96 / 91 · -0.045em<br>Medium</div>
+          </div>
+          <div class="scale-line s-h1 is-display-face">
+            <div class="lvl">H1</div>
+            <div class="sample">One platform, every team</div>
+            <div class="face-pill is-display">EB Garamond</div>
+            <div class="specs">72 / 72 · -0.04em<br>Medium</div>
+          </div>
+          <div class="scale-line s-h2 is-display-face">
+            <div class="lvl">H2</div>
+            <div class="sample">Built for operators</div>
+            <div class="face-pill is-display">EB Garamond</div>
+            <div class="specs">56 / 60 · -0.035em<br>Medium</div>
+          </div>
+          <div class="scale-line s-h3 is-display-face">
+            <div class="lvl">H3</div>
+            <div class="sample">Operational clarity, on demand</div>
+            <div class="face-pill is-display">EB Garamond</div>
+            <div class="specs">36 / 42 · -0.025em<br>Medium</div>
+          </div>
+          <div class="scale-line s-h4 is-display-face">
+            <div class="lvl">H4</div>
+            <div class="sample">Section heading example</div>
+            <div class="face-pill is-display">EB Garamond</div>
+            <div class="specs">24 / 32 · -0.02em<br>Medium</div>
+          </div>
+          <div class="scale-line s-lead is-body-face">
+            <div class="lvl">Lead</div>
+            <div class="sample">Lead paragraph for hero areas and section openers. Inter at a comfortable reading size.</div>
+            <div class="face-pill is-body">Inter</div>
+            <div class="specs">22 / 33 · -0.005em<br>Regular</div>
+          </div>
+          <div class="scale-line s-body is-body-face">
+            <div class="lvl">Body</div>
+            <div class="sample">Default body copy. Tuned for screens, comfortable across long blocks of text.</div>
+            <div class="face-pill is-body">Inter</div>
+            <div class="specs">17 / 27 · -0.005em<br>Regular</div>
+          </div>
+          <div class="scale-line s-small is-body-face">
+            <div class="lvl">Small</div>
+            <div class="sample">Captions, footnotes, table cells, microcopy.</div>
+            <div class="face-pill is-body">Inter</div>
+            <div class="specs">14 / 22 · 0<br>Regular</div>
+          </div>
+        </div>
+
+        <!-- Weights, split per face -->
+        <div class="sub-head" style="margin-top:88px;">
+          <h3>Weights</h3>
+          <span class="tag">Display: 300/400/500/700/900 · Text: 400/500/600/700</span>
+        </div>
+        <div class="weights-split">
+          <div class="weights-col display">
+            <div class="col-head">
+              <span class="col-name">EB Garamond</span>
+              <span class="col-role">Display</span>
+            </div>
+
+            <div class="weight-row">
+              <div class="w-num">400</div>
+              <div class="w-spec w-400">Quiet system.</div>
+            </div>
+            <div class="weight-row">
+              <div class="w-num">500</div>
+              <div class="w-spec w-500">Title weight.</div>
+            </div>
+
+
+
+          </div>
+          <div class="weights-col body">
+            <div class="col-head">
+              <span class="col-name">Inter</span>
+              <span class="col-role">Text</span>
+            </div>
+            <div class="weight-row">
+              <div class="w-num">400</div>
+              <div class="w-spec w-400">Loud signal.</div>
+            </div>
+            <div class="weight-row">
+              <div class="w-num">500</div>
+              <div class="w-spec w-500">Loud signal.</div>
+            </div>
+            <div class="weight-row">
+              <div class="w-num">600</div>
+              <div class="w-spec w-600">Loud signal.</div>
+            </div>
+            <div class="weight-row">
+              <div class="w-num">700</div>
+              <div class="w-spec w-700">Loud signal.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pairings -->
+        <div class="sub-head" style="margin-top:88px;">
+          <h3>Composition</h3>
+          <span class="tag">Headline + body in context</span>
+        </div>
+        <div class="pair-grid">
+          <div class="pair-card">
+            <div class="eyebrow">Marketing · Light</div>
+            <h4 class="heading">Run the business <em>from one screen.</em></h4>
+            <p class="body">Connect every system EULER touches: finance, ops, revenue. Operate from a single source of truth that updates as fast as your team works.</p>
+          </div>
+          <div class="pair-card dark">
+            <div class="eyebrow">Product · Dark</div>
+            <h4 class="heading">Built for the <em>operating layer.</em></h4>
+            <p class="body">EULER sits between your tools and your team. It's where decisions happen, alerts arrive, and workflows execute, without anyone leaving the page.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PATTERNS ===================== -->
+      <section class="section" id="patterns">
+        <div class="sec-head">
+          <div class="sec-eyebrow"><span class="num">04</span><span>Patterns &amp; texture</span></div>
+          <h2 class="sec-title">Quiet grids. <em>Loud edges.</em></h2>
+          <p class="sec-lead">
+            Most surfaces stay clean. When a surface needs depth, it gets one of six patterns. Never two. Applied with restraint. Patterns reinforce structure, they never decorate.
+          </p>
+        </div>
+
+        <!-- Hero pattern -->
+        <div class="patterns-hero">
+          <div class="grid-overlay"></div>
+          <div class="scan-overlay"></div>
+          <div class="pattern-label"><span class="dot"></span><span>Spectrum grid · primary brand surface</span></div>
+        </div>
+
+        <!-- Six pattern tiles -->
+        <div class="sub-head" style="margin-bottom: 32px;">
+          <h3>The six patterns</h3>
+          <span class="tag">Four surfaces · one per moment · never combined</span>
+        </div>
+        <div class="pattern-grid">
+          <div class="pattern-tile">
+            <div class="surface grid-dark"></div>
+            <div class="meta"><span class="name">Grid · Dark</span><span class="role">SURFACE-01</span></div>
+          </div>
+          <div class="pattern-tile">
+            <div class="surface grid-light"></div>
+            <div class="meta"><span class="name">Grid · Light</span><span class="role">SURFACE-02</span></div>
+          </div>
+          <div class="pattern-tile">
+            <div class="surface scanlines"></div>
+            <div class="meta"><span class="name">Scanlines</span><span class="role">SURFACE-03</span></div>
+          </div>
+          <div class="pattern-tile">
+            <div class="surface spectrum"></div>
+            <div class="meta"><span class="name">Spectrum grid</span><span class="role">SURFACE-04</span></div>
+          </div>
+        </div>
+
+        <!-- Principles -->
+        <div class="principles">
+          <div class="principle">
+            <div class="num">PRINCIPLE 01</div>
+            <h4>Patterns reinforce structure.</h4>
+            <p>Use a grid to imply order and a system underneath. Use scanlines to imply telemetry, signal, motion. Patterns should always have a reason, not as decoration.</p>
+          </div>
+          <div class="principle">
+            <div class="num">PRINCIPLE 02</div>
+            <h4>One pattern per surface.</h4>
+            <p>Layering patterns dilutes them. A surface either has a grid, or it doesn't. The spectrum grid is the only exception. It's a brand surface, used sparingly for hero moments.</p>
+          </div>
+          <div class="principle">
+            <div class="num">PRINCIPLE 03</div>
+            <h4>Quiet by default.</h4>
+            <p>Pattern lines are 6–8% white on dark, slate-200 on light. They're meant to be felt, not seen. If the pattern reads before the content, the opacity is wrong.</p>
+          </div>
+          <div class="principle">
+            <div class="num">PRINCIPLE 04</div>
+            <h4>Never inside product UI.</h4>
+            <p>Patterns belong to brand surfaces: marketing pages, decks, hero blocks. The product UI itself stays flat: white, slate, and the occasional accent. No grids behind tables.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== ROUNDNESS ===================== -->
+      <section class="section" id="roundness">
+        <div class="sec-head">
+          <div class="sec-eyebrow"><span class="num">05</span><span>Roundness</span></div>
+          <h2 class="sec-title">One radius. <em>Four pixels.</em></h2>
+          <p class="sec-lead">
+            EULER has a single corner radius across the entire system. Buttons, cards, inputs,
+            modals, badges. All 4px. It's the fastest visual cue that something is ours.
+          </p>
+        </div>
+
+        <!-- Hero -->
+        <div class="round-hero">
+          <div class="left">
+            <div class="eyebrow"><span class="dot"></span><span>The canonical radius</span></div>
+            <div>
+              <h3>Squared, with a hairline of softness.</h3>
+              <p>Sharp enough to feel structural. Just round enough to not feel hostile. 4px sits at the edge of "is that radius?", and that's exactly the point. It signals system, not whimsy.</p>
+            </div>
+            <div class="specs-line">
+              <div><span class="lbl">Token</span><span class="val">--r</span></div>
+              <div><span class="lbl">Value</span><span class="val">4px</span></div>
+              <div><span class="lbl">Scope</span><span class="val">Universal</span></div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="num-badge">4<span class="px">px</span></div>
+          </div>
+        </div>
+
+        <!-- Radius scale -->
+        <div class="sub-head">
+          <h3>The scale</h3>
+          <span class="tag">4px is canonical · others are exceptions</span>
+        </div>
+        <div class="radius-scale">
+          <div class="radius-tile">
+            <div class="swatch-wrap"><div class="swatch" style="border-radius:0;"></div></div>
+            <div class="meta">
+              <div class="lbl">/ None</div>
+              <div class="val">0px</div>
+              <div class="use">Full-bleed sections, hero images, bordered tables.</div>
+            </div>
+          </div>
+          <div class="radius-tile">
+            <div class="swatch-wrap"><div class="swatch" style="border-radius:2px;"></div></div>
+            <div class="meta">
+              <div class="lbl">XS</div>
+              <div class="val">2px</div>
+              <div class="use">Small tags, indicator chips, micro-elements.</div>
+            </div>
+          </div>
+          <div class="radius-tile active">
+            <div class="swatch-wrap"><div class="swatch" style="border-radius:4px;"></div></div>
+            <div class="meta">
+              <div class="lbl">/ Default</div>
+              <div class="val">4px</div>
+              <div class="use">Buttons, cards, inputs, modals, badges. Everything.</div>
+            </div>
+          </div>
+          <div class="radius-tile">
+            <div class="swatch-wrap"><div class="swatch" style="border-radius:8px;"></div></div>
+            <div class="meta">
+              <div class="lbl">L</div>
+              <div class="val">8px</div>
+              <div class="use">Large surfaces only. Sheets, image frames.</div>
+            </div>
+          </div>
+          <div class="radius-tile">
+            <div class="swatch-wrap"><div class="swatch" style="border-radius:16px;"></div></div>
+            <div class="meta">
+              <div class="lbl">XL</div>
+              <div class="val">16px</div>
+              <div class="use">Marketing-only. Illustrative cards, callouts.</div>
+            </div>
+          </div>
+          <div class="radius-tile">
+            <div class="swatch-wrap"><div class="swatch" style="border-radius:999px;"></div></div>
+            <div class="meta">
+              <div class="lbl">Pill</div>
+              <div class="val">999px</div>
+              <div class="use">Status dots, avatars, the live indicator.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Applications -->
+        <div class="sub-head" style="margin-top: 88px;">
+          <h3>4px applied</h3>
+          <span class="tag">Same radius across every surface</span>
+        </div>
+        <div class="round-applications">
+          <div class="round-app">
+            <div class="demo"><div class="button-mock">Connect data source</div></div>
+            <div class="meta"><span class="name">Buttons</span><span class="desc">radius: 4px</span></div>
+          </div>
+          <div class="round-app">
+            <div class="demo">
+              <div class="card-mock">
+                <div class="header-row">
+                  <div class="badge"></div>
+                  <div class="lines"><div class="top-line"></div><div class="body-line"></div></div>
+                </div>
+                <div class="body"><div style="width:100%;"></div><div style="width:88%;"></div><div style="width:72%;"></div></div>
+              </div>
+            </div>
+            <div class="meta"><span class="name">Cards</span><span class="desc">radius: 4px</span></div>
+          </div>
+          <div class="round-app">
+            <div class="demo"><div class="input-mock">name@company.com</div></div>
+            <div class="meta"><span class="name">Inputs (focus)</span><span class="desc">radius: 4px</span></div>
+          </div>
+        </div>
+
+        <!-- Don't -->
+        <div class="rounded-dont">
+          <div class="header">
+            <h3>Why 4px and not the others</h3>
+            <span class="tag">Same square · different radii</span>
+          </div>
+          <div class="grid">
+            <div class="compare bad r0">
+              <div class="box"></div>
+              <div class="label">
+                <div class="top"><span class="icon">×</span><span class="val">0px</span></div>
+                <div class="desc">Brutalist, harsh. Reads as engineering output, not a brand.</div>
+              </div>
+            </div>
+            <div class="compare good r4">
+              <div class="box"></div>
+              <div class="label">
+                <div class="top"><span class="icon">✓</span><span class="val">4px</span></div>
+                <div class="desc">Structural, system. The fastest way to signal EULER.</div>
+              </div>
+            </div>
+            <div class="compare bad r12">
+              <div class="box"></div>
+              <div class="label">
+                <div class="top"><span class="icon">×</span><span class="val">12px</span></div>
+                <div class="desc">Soft, consumer-y. Reads as a friendly app, not infrastructure.</div>
+              </div>
+            </div>
+            <div class="compare bad r999">
+              <div class="box"></div>
+              <div class="label">
+                <div class="top"><span class="icon">×</span><span class="val">999px</span></div>
+                <div class="desc">Playful, off-brand. Reserved for status dots and avatars.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== TONE OF VOICE ===================== -->
+      <section class="section" id="voice">
+        <div class="sec-head">
+          <div class="sec-eyebrow"><span class="num">06</span><span>Tone of voice &amp; personality</span></div>
+          <h2 class="sec-title">Calm but firm. <em>Sharp, not flashy.</em></h2>
+          <p class="sec-lead">
+            EULER speaks the way an experienced operator does. Straight to the point,
+            quietly confident, skeptical of fluff. Controlled intensity. Clear, no filler.
+            Educational, grounded in data, never theatrical.
+          </p>
+        </div>
+
+        <!-- Persona -->
+        <div class="persona">
+          <div class="portrait"><span>MC</span></div>
+          <div>
+            <div class="lbl">Brand voice persona</div>
+            <h3 class="name">Mark Cuban</h3>
+            <p class="desc">If EULER had a voice, it would be his. Operationally grounded, dry-edged, sharp without being abrasive. The voice of someone who's run the business, knows how it breaks, and has no time for buzzwords.</p>
+          </div>
+        </div>
+
+        <!-- Personality traits scale -->
+        <div class="sub-head">
+          <h3>Brand personality</h3>
+          <span class="tag">12 axes · where EULER sits</span>
+        </div>
+        <div class="personality" id="personality"></div>
+
+        <!-- Archetypes -->
+        <div class="sub-head" style="margin-top:88px;">
+          <h3>Brand archetypes</h3>
+          <span class="tag">Top 3 · ordered by primacy</span>
+        </div>
+        <div class="archetypes">
+          <div class="arch-card featured">
+            <div class="order"><span class="badge">01</span><span>Primary</span></div>
+            <h4>Ruler</h4>
+            <div class="arch-section"><div class="lbl">Drivers</div><div class="val">Take control of life · Gain deep security</div></div>
+            <div class="arch-section"><div class="lbl">Values</div><div class="val">Authority · Confidence · Respect</div></div>
+            <div class="arch-section"><div class="lbl">Goals</div><div class="val">Status · Prosperity · Control</div></div>
+            <div class="arch-section"><div class="lbl">Fears</div><div class="val">Chaos · Rebellion</div></div>
+          </div>
+          <div class="arch-card">
+            <div class="order"><span class="badge">02</span><span>Secondary</span></div>
+            <h4>Sage</h4>
+            <div class="arch-section"><div class="lbl">Drivers</div><div class="val">Search for the truth · Explore life's mysteries</div></div>
+            <div class="arch-section"><div class="lbl">Values</div><div class="val">Understanding · Intelligence · Education · Expertise</div></div>
+            <div class="arch-section"><div class="lbl">Goals</div><div class="val">Wisdom · Knowledge</div></div>
+            <div class="arch-section"><div class="lbl">Fears</div><div class="val">Deception · Ignorance</div></div>
+          </div>
+          <div class="arch-card">
+            <div class="order"><span class="badge">03</span><span>Tertiary</span></div>
+            <h4>Creative</h4>
+            <div class="arch-section"><div class="lbl">Drivers</div><div class="val">Realize great ideas · Develop the new</div></div>
+            <div class="arch-section"><div class="lbl">Values</div><div class="val">Expression · Vision · Ingenuity · Non-conformity</div></div>
+            <div class="arch-section"><div class="lbl">Goals</div><div class="val">Imagination · Innovation</div></div>
+            <div class="arch-section"><div class="lbl">Fears</div><div class="val">Mediocrity · Reputation</div></div>
+          </div>
+        </div>
+
+        <!-- Sounds like / doesn't -->
+        <div class="sub-head" style="margin-top:88px;">
+          <h3>What the brand sounds like</h3>
+          <span class="tag">Voice characteristics</span>
+        </div>
+
+        <div class="voice-stage">
+          <!-- Left: 12 tone characteristics as tag cluster -->
+          <div class="voice-pane voice-tone">
+            <div class="vp-head">
+              <span class="vp-num">12</span>
+              <div>
+                <div class="vp-eyebrow">Tone</div>
+                <div class="vp-title">Twelve characteristics</div>
+              </div>
+            </div>
+            <p class="vp-lead">The shape of the voice. Each word here describes a posture, not a topic.</p>
+            <div class="tone-cluster">
+              <span class="tone-chip">Calm but firm</span>
+              <span class="tone-chip">Straight to the point</span>
+              <span class="tone-chip">Dry edge</span>
+              <span class="tone-chip">Slightly provocative</span>
+              <span class="tone-chip">Controlled intensity</span>
+              <span class="tone-chip">Sharp, not flashy</span>
+              <span class="tone-chip">Quietly confident</span>
+              <span class="tone-chip">Operationally grounded</span>
+              <span class="tone-chip">Clear, no filler</span>
+              <span class="tone-chip">Skeptical of fluff</span>
+              <span class="tone-chip">Measured and direct</span>
+              <span class="tone-chip">Simplifies the complex</span>
+              <span class="tone-chip">Educational, uses data</span>
+            </div>
+          </div>
+
+          <!-- Right: Sounds like vs. Doesn't, as paired versus rows -->
+          <div class="voice-pane voice-versus">
+            <div class="vp-head">
+              <span class="vp-num">06</span>
+              <div>
+                <div class="vp-eyebrow">Rules</div>
+                <div class="vp-title">Sounds like &nbsp;/&nbsp; Doesn't</div>
+              </div>
+            </div>
+            <div class="vs-table">
+              <div class="vs-row">
+                <div class="vs-yes"><span class="dot"></span>Direct</div>
+                <div class="vs-sep">not</div>
+                <div class="vs-no"><span class="x"></span>Dressed up</div>
+              </div>
+              <div class="vs-row">
+                <div class="vs-yes"><span class="dot"></span>Operational</div>
+                <div class="vs-sep">not</div>
+                <div class="vs-no"><span class="x"></span>Abstract</div>
+              </div>
+              <div class="vs-row">
+                <div class="vs-yes"><span class="dot"></span>Sharp, controlled</div>
+                <div class="vs-sep">not</div>
+                <div class="vs-no"><span class="x"></span>Abrasive</div>
+              </div>
+              <div class="vs-row">
+                <div class="vs-yes"><span class="dot"></span>Clear</div>
+                <div class="vs-sep">not</div>
+                <div class="vs-no"><span class="x"></span>Over-explained</div>
+              </div>
+              <div class="vs-row">
+                <div class="vs-yes"><span class="dot"></span>Confident</div>
+                <div class="vs-sep">not</div>
+                <div class="vs-no"><span class="x"></span>Self-important</div>
+              </div>
+              <div class="vs-row">
+                <div class="vs-yes"><span class="dot"></span>Measured</div>
+                <div class="vs-sep">not</div>
+                <div class="vs-no"><span class="x"></span>Loud</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Avoid list — full-width band -->
+        <div class="avoid-band">
+          <div class="avoid-l">
+            <div class="vp-eyebrow alert">Eight to avoid</div>
+            <div class="avoid-title">If a sentence drifts toward any of these, rewrite it.</div>
+          </div>
+          <div class="avoid-r">
+            <span class="avoid-chip">Buzzword-heavy</span>
+            <span class="avoid-chip">Overly clever or aggressive</span>
+            <span class="avoid-chip">Founder-hype driven or flashy</span>
+            <span class="avoid-chip">Consultant-ish</span>
+            <span class="avoid-chip">Marketing-theory fluent</span>
+            <span class="avoid-chip">AI-trend-chasing</span>
+            <span class="avoid-chip">Corporate and padded</span>
+            <span class="avoid-chip">Warm and soft for likability's sake</span>
+          </div>
+        </div>
+
+        <!-- Cadence -->
+        <div class="sub-head" style="margin-top:88px;">
+          <h3>Cadence &amp; rhythm</h3>
+          <span class="tag">How a EULER sentence moves</span>
+        </div>
+        <div class="rhythm-stack">
+          <div class="rhythm-row">
+            <div class="rh-num">01</div>
+            <div class="rh-bar"><span style="width:18%"></span></div>
+            <div class="rh-text"><strong>Starts with the point quickly.</strong> Little to no runway before the tension appears.</div>
+          </div>
+          <div class="rhythm-row">
+            <div class="rh-num">02</div>
+            <div class="rh-bar"><span style="width:32%"></span></div>
+            <div class="rh-text"><strong>Keeps momentum high</strong> through short-to-medium sentences, not long explanations.</div>
+          </div>
+          <div class="rhythm-row">
+            <div class="rh-num">03</div>
+            <div class="rh-bar"><span style="width:46%"></span></div>
+            <div class="rh-text"><strong>Uses controlled urgency.</strong> It should feel pressing, but never frantic.</div>
+          </div>
+          <div class="rhythm-row">
+            <div class="rh-num">04</div>
+            <div class="rh-bar"><span style="width:60%"></span></div>
+            <div class="rh-text"><strong>Carries a quiet edge.</strong> Slight skepticism and realism sharpen the tone.</div>
+          </div>
+          <div class="rhythm-row">
+            <div class="rh-num">05</div>
+            <div class="rh-bar"><span style="width:72%"></span></div>
+            <div class="rh-text"><strong>Builds pressure through contrast.</strong> What's broken vs. what changes.</div>
+          </div>
+          <div class="rhythm-row">
+            <div class="rh-num">06</div>
+            <div class="rh-bar"><span style="width:80%"></span></div>
+            <div class="rh-text"><strong>Sounds aware.</strong> Every claim should feel tied to time, revenue, scale, or efficiency.</div>
+          </div>
+          <div class="rhythm-row">
+            <div class="rh-num">07</div>
+            <div class="rh-bar"><span style="width:62%"></span></div>
+            <div class="rh-text"><strong>Uses repetition strategically</strong> to build emphasis, not theatrics.</div>
+          </div>
+          <div class="rhythm-row">
+            <div class="rh-num">08</div>
+            <div class="rh-bar"><span style="width:48%"></span></div>
+            <div class="rh-text"><strong>Feels grounded and operator-led.</strong> Never airy, abstract, or detached from execution.</div>
+          </div>
+          <div class="rhythm-row">
+            <div class="rh-num">09</div>
+            <div class="rh-bar"><span style="width:36%"></span></div>
+            <div class="rh-text"><strong>Maintains emotional restraint.</strong> Confident and assertive without sounding loud.</div>
+          </div>
+          <div class="rhythm-row close">
+            <div class="rh-num">10</div>
+            <div class="rh-bar"><span style="width:24%"></span></div>
+            <div class="rh-text"><strong>Ends with clarity and forward motion.</strong> The reader should feel momentum, not ambiguity.</div>
+          </div>
+        </div>
+
+        <!-- How the brand should not feel -->
+        <div class="sub-head" style="margin-top:88px;">
+          <h3>How the brand should <em>not</em> feel</h3>
+          <span class="tag">Six adjectives to avoid</span>
+        </div>
+        <div class="not-feel">
+          <span class="nf-chip">Loud</span>
+          <span class="nf-chip">Salesy</span>
+          <span class="nf-chip">Performative</span>
+          <span class="nf-chip">Soft &amp; reassuring</span>
+          <span class="nf-chip">Trend-chasing</span>
+          <span class="nf-chip">Overdesigned</span>
+        </div>
+      </section>
+
+      <!-- End -->
+      <div class="end">
+        <img src="data:image/svg+xml,%3Csvg%20width%3D%221482%22%20height%3D%22477%22%20viewBox%3D%220%200%201482%20477%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23000000%22%3E%0A%3Cpath%20d%3D%22M1077.39%20332.213H974.652V127.866C974.652%20122.744%20970.526%20118.603%20965.423%20118.603H945.845V339.371C945.845%20349.598%20954.114%20357.897%20964.303%20357.897H1086.61V341.459C1086.61%20336.336%201082.48%20332.195%201077.38%20332.195L1077.39%20332.213ZM1428.28%20259.231C1431.61%20258.089%201434.74%20256.786%201437.65%20255.269C1449.6%20249.057%201458.4%20240.49%201464.06%20229.567C1469.82%20218.644%201472.7%20206.168%201472.7%20192.139C1472.7%20178.11%201469.82%20165.419%201464.06%20154.389C1458.3%20143.252%201449.44%20134.524%201437.49%20128.205C1425.65%20121.78%201410.39%20118.567%201391.72%20118.567H1311.08V357.879H1330.66C1335.76%20357.879%201339.89%20353.739%201339.89%20348.616V264.407H1392.06C1394.18%20264.407%201396.24%20264.354%201398.28%20264.282L1440.55%20343.244C1445.37%20352.257%201454.76%20357.879%201464.95%20357.879H1482L1428.3%20259.213L1428.28%20259.231ZM1391.08%20238.42H1339.87V144.305H1390.76C1403.67%20144.305%201414.02%20146.286%201421.81%20150.248C1429.6%20154.211%201435.25%20159.779%201438.77%20166.954C1442.4%20174.13%201444.21%20182.536%201444.21%20192.174C1444.21%20201.813%201442.45%20209.951%201438.93%20216.912C1435.41%20223.766%201429.76%20229.067%201421.97%20232.815C1414.18%20236.563%201403.88%20238.438%201391.08%20238.438V238.42ZM1262.54%20332.213H1154.96V249.985H1262.31V224.284H1154.96V144.305H1260.01C1265.12%20144.305%201269.24%20140.164%201269.24%20135.041V118.603H1144.63C1134.44%20118.603%201126.17%20126.903%201126.17%20137.13V339.371C1126.17%20349.598%201134.44%20357.897%201144.63%20357.897H1271.77V341.459C1271.77%20336.336%201267.64%20332.195%201262.54%20332.195V332.213ZM407.166%20112.481L217.399%202.46309C214.625%200.856726%20211.514%200.0356969%20208.384%200.0178485C208.331%200.0178485%20208.277%200%20208.224%200C208.171%200%20208.117%200%20208.064%200.0178485C204.952%200.0356969%20201.84%200.856726%20199.049%202.46309L9.15759%20112.517C3.503%20115.801%200%20121.905%200%20128.455V348.545C0%20355.095%203.503%20361.199%209.15759%20364.483L199.049%20474.537C201.876%20476.179%20205.041%20477%20208.206%20477C211.371%20477%20214.536%20476.179%20217.364%20474.537L407.255%20364.483C412.909%20361.217%20416.412%20355.095%20416.412%20348.545V128.545C416.412%20121.941%20412.874%20115.783%20407.166%20112.481ZM401.671%20122.101C401.903%20122.244%20402.134%20122.405%20402.347%20122.565L331.754%20164.188L225.935%2020.2758L401.671%20122.119V122.101ZM208.224%2014.9392L319.271%20165.955H97.1771L208.224%2014.9392ZM14.7055%20122.155L190.531%2020.2758L84.6944%20164.188L14.1009%20122.565C14.2965%20122.423%2014.4921%20122.28%2014.7055%20122.155ZM11.0958%20133.703L79.0931%20173.79L11.0958%20326.127V133.703ZM11.8248%20351.704L86.7392%20183.893L197.839%20382.171L14.3499%20354.595C13.2474%20353.863%2012.3939%20352.864%2011.8248%20351.704ZM202.676%20463.774L40.489%20369.784L202.676%20394.147V463.774ZM95.6657%20177.092H320.782L208.224%20377.995L95.6657%20177.092ZM213.772%20463.774V394.147L375.959%20369.784L213.772%20463.774ZM402.098%20354.595L218.609%20382.171L329.691%20183.893L404.605%20351.722C404.036%20352.882%20403.183%20353.881%20402.08%20354.613L402.098%20354.595ZM405.37%20326.127L337.355%20173.79L405.37%20133.685V326.109V326.127ZM877.083%20127.866V273.349C877.083%20285.022%20874.523%20295.41%20869.402%20304.513C864.281%20313.615%20856.972%20320.79%20847.477%20326.038C837.981%20331.178%20826.619%20333.748%20813.389%20333.748C800.16%20333.748%20788.744%20331.178%20779.142%20326.038C769.54%20320.79%20762.178%20313.615%20757.057%20304.513C751.936%20295.41%20749.375%20285.022%20749.375%20273.349V127.866C749.375%20122.744%20745.25%20118.603%20740.146%20118.603H720.569V275.598C720.569%20291.983%20724.41%20306.601%20732.091%20319.452C739.773%20332.195%20750.549%20342.262%20764.419%20349.651C778.395%20357.041%20794.719%20360.735%20813.389%20360.735C832.06%20360.735%20848.33%20357.041%20862.182%20349.651C876.052%20342.262%20886.774%20332.195%20894.349%20319.452C902.031%20306.601%20905.872%20291.983%20905.872%20275.598V118.603H886.294C881.191%20118.603%20877.066%20122.744%20877.066%20127.866H877.083ZM672.345%20332.213H564.765V249.985H672.114V224.284H564.765V144.305H669.82C674.923%20144.305%20679.048%20140.164%20679.048%20135.041V118.603H554.434C544.245%20118.603%20535.977%20126.903%20535.977%20137.13V339.371C535.977%20349.598%20544.245%20357.897%20554.434%20357.897H681.573V341.459C681.573%20336.336%20677.448%20332.195%20672.345%20332.195V332.213Z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%0A%3C%2Fg%3E%3C%2Fsvg%3E" alt="EULER" class="end-logo">
+        <div class="end-meta">
+          <div><strong>Brand Guidelines</strong> · v3.0</div>
+          <div>Maintained by Brand Studio</div>
+          <div>Last revised May 2026</div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="script.js"></script>
+
+
+
+</body></html>
